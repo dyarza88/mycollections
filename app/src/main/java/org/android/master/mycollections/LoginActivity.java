@@ -18,8 +18,6 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     protected void loginAction(View view) {
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
         finish();
     }
 
