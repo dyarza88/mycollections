@@ -1,6 +1,7 @@
 package org.android.master.mycollections;
 
 import android.app.FragmentManager;
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.app.Fragment;
@@ -66,15 +67,8 @@ public class MainActivity extends AppCompatActivity {
         // Set the drawer toggle as the DrawerListener
         mDrawerLayout.setDrawerListener(mDrawerToggle);
 
-        if (getActionBar() != null) {
-            getActionBar().setDisplayHomeAsUpEnabled(true);
-            getActionBar().setHomeButtonEnabled(true);
-            Toast.makeText(this, "getActionBar", Toast.LENGTH_SHORT).show();
-        } else if (getSupportActionBar() != null) {
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-            getSupportActionBar().setHomeButtonEnabled(true);
-            Toast.makeText(this, "getSupportActionBar", Toast.LENGTH_SHORT).show();
-        }
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeButtonEnabled(true);
 
         // Load the main view
         Fragment fragment = new CollectionsListFragment();
@@ -124,6 +118,12 @@ public class MainActivity extends AppCompatActivity {
 
     private void selectItem(int position) {
         Toast.makeText(this, "POS: " + position, Toast.LENGTH_SHORT).show();
+        switch(position){
+            case 4:
+                Intent i = new Intent(this, LoginActivity.class);
+                startActivity(i);
+                break;
+        }
     }
 
     @Override
