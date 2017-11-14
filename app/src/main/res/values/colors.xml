@@ -12,4 +12,6 @@
     <color name="secondaryDarkColor">#00675b</color>
     <color name="primaryTextColor">#ffebee</color>
     <color name="secondaryTextColor">#000000</color>
+
+    <color name="cardViewTitleBackground">#CCFFFFFF</color>
 </resources>
