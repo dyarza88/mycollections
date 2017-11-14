@@ -1,5 +1,18 @@
 <resources>
     <string name="app_name">My Collections</string>
+    <string-array name="menu_array">
+        <item>Mis colecciones</item>
+        <item>Mercado</item>
+        <item>Foro</item>
+        <item>Tablón de anuncios</item>
+        <item>Perfíl de usuario</item>
+        <item>Configuración</item>
+    </string-array>
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+
+    <string name="menu_nueva_coleccion">Nueva colección</string>
+
     <string name="diego">Diego Mariquita!</string>
 
     <string name="hello_world">Hola Mundo!</string>
