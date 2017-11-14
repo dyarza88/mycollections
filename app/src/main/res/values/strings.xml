@@ -1,4 +1,27 @@
 <resources>
     <string name="app_name">My Collections</string>
     <string name="diego">Diego Mariquita!</string>
+
+    <string name="hello_world">Hola Mundo!</string>
+    <string name="action_settings">Opciones</string>
+    <string name="email">Emai</string>
+    <string name="passowrd">Contraseña</string>
+    <string name="login">ACCEDER</string>
+    <string name="loginGoogle">ACCEDER USANDO GOOGLE +</string>
+    <string name="show_pwd">Mostrar Contraseña</string>
+    <string name="hide_pwd">Ocultar Contraseña</string>
+    <string name="forgot">He olvidado mi contraseña!!</string>
+    <string name="closebutton">ke dise</string>
+    <string name="newUser">Aún no eres miembro? Registrate!.</string>
+    <string name="fullName">Nombre</string>
+    <string name="mobileNumber">Teléfono</string>
+    <string name="location">Localidad</string>
+    <string name="confirmPassword">Confirmar Contraseña</string>
+    <string name="terms_conditions">Al marcar esta casilla acepto los terminos y condiciones de uso.</string>
+    <string name="signUp">REGISTRARSE</string>
+    <string name="signUpGoogle">REGISTRARSE USANDO GOOGLE +</string>
+    <string name="already_user">Ya eres miembro? Accede desde aqui.</string>
+    <string name="registered_emailid">Por favor, introduce un email válido:</string>
+    <string name="submit">ENTRAR</string>
+    <string name="back">ATRÁS</string>
 </resources>
