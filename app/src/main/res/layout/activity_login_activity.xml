@@ -72,7 +72,8 @@
                 android:layout_weight="1"
                 android:text="@string/show_pwd"
                 android:textColor="@color/colorAccent"
-                android:textSize="14sp" />
+                android:textSize="14sp"
+                android:onClick="showPasswordAction"/>
 
             <TextView
                 android:id="@+id/forgot_password"
@@ -83,7 +84,8 @@
                 android:padding="5dp"
                 android:text="@string/forgot"
                 android:textColor="@color/colorAccent"
-                android:textSize="14sp" />
+                android:textSize="14sp"
+                android:onClick="forgetPasswordAction"/>
         </LinearLayout>
 
         <Button
@@ -96,7 +98,8 @@
             android:text="@string/login"
             android:textColor="#009688"
             android:textSize="17sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:onClick="loginAction"/>
 
         <Button
             android:id="@+id/loginGoogleBtn"
@@ -108,7 +111,8 @@
             android:text="@string/loginGoogle"
             android:textColor="@color/colorAccent"
             android:textSize="17sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:onClick="loginGoogleAction"/>
     </LinearLayout>
 
     <TextView
@@ -122,6 +126,7 @@
         android:padding="5dp"
         android:text="@string/newUser"
         android:textColor="@color/colorAccent"
-        android:textSize="15sp" />
+        android:textSize="15sp"
+        android:onClick="signupAction"/>
 
 </RelativeLayout>

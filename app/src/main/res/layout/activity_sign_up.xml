@@ -149,7 +149,8 @@
         android:layout_marginTop="7dp"
         android:text="@string/terms_conditions"
         android:textColor="@color/colorAccent"
-        android:textSize="14sp" />
+        android:textSize="14sp"
+        android:onClick="conditionAction"/>
 
     <Button
         android:id="@+id/signUpBtn"
@@ -161,7 +162,8 @@
         android:text="@string/signUp"
         android:textColor="@color/colorAccent"
         android:textSize="17sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:onClick="signupAction"/>
 
     <Button
         android:id="@+id/signUpGoogleBtn"
@@ -173,7 +175,8 @@
         android:text="@string/signUpGoogle"
         android:textColor="@color/colorAccent"
         android:textSize="17sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:onClick="loginGoogleAction"/>
 
     <TextView
         android:id="@+id/already_user"
@@ -185,6 +188,7 @@
         android:padding="10dp"
         android:text="@string/already_user"
         android:textColor="@color/colorPrimary"
-        android:textSize="15sp" />
+        android:textSize="15sp"
+        android:onClick="loginAction"/>
 
 </LinearLayout>
