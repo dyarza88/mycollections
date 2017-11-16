@@ -6,7 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:focusedByDefault="true"
     android:focusableInTouchMode="true">
 
     <ScrollView
@@ -48,7 +47,7 @@
                     android:layout_height="190dp"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
-                    android:background="@color/colorBlanco"
+                    android:background="@android:color/white"
                     android:contentDescription="fotoarticulo"
                     app:srcCompat="@drawable/web_cab_circulo" />
 
@@ -102,7 +101,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:focusedByDefault="false"
                 android:focusableInTouchMode="true"
                 android:hint="@string/hint_nombre_art_A"
                 android:inputType="none|textPersonName"

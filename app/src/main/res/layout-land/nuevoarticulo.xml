@@ -32,7 +32,7 @@
             android:layout_height="150dp"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
-            android:background="@color/colorBlanco"
+            android:background="@android:color/white"
             android:contentDescription="fotoarticulo"
             app:srcCompat="@drawable/web_cab_circulo" />
 
@@ -74,7 +74,6 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:paddingLeft="30dp"
-            android:focusedByDefault="true"
             android:focusableInTouchMode="true">
 
             <TextView
@@ -91,7 +90,6 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:focusableInTouchMode="true"
-                android:focusedByDefault="false"
                 android:hint="@string/hint_nombre_art_A"
                 android:inputType="none|textPersonName"
                 android:selectAllOnFocus="false" />
