@@ -101,7 +101,9 @@ public class MainActivity extends AppCompatActivity {
 
         switch (item.getItemId()) {
             case R.id.menu_new:
-                Toast.makeText(this, "NUEVO ELEMENTO", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "NUEVA COLECCIÓN", Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(this, NewCollectionActivity.class);
+                startActivity(i);
                 return true;
             default:
                 // Handle left menu actions
