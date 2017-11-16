@@ -35,4 +35,14 @@
     <string name="registered_emailid">Por favor, introduce un email válido:</string>
     <string name="submit">ENTRAR</string>
     <string name="back">ATRÁS</string>
+    <string name="perfil_usuario">Perfil Usuario</string>
+    <string name="nombre_usuario">Nombre:</string>
+    <string name="descripcion_imagen">Imagen de Usuario</string>
+    <string name="accion_cancelar">Cancelar</string>
+    <string name="accion_aceptar">Aceptar</string>
+    <string name="hint_nombre">Nombre</string>
+    <string name="hint_telefono">Teléfono</string>
+    <string name="hint_correo">E-Mail</string>
+    <string name="hint_localidad">Localidad</string>
+    <string name="hint_coleccionistaDe">Coleccionista de …</string>
 </resources>
