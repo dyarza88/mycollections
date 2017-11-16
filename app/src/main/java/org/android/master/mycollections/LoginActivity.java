@@ -9,7 +9,12 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class LoginActivity extends AppCompatActivity {
+
+    public static final String regEx = "\\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}\\b";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,7 +23,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     protected void loginAction(View view) {
-        finish();
+        validateForm();
     }
 
     protected void loginGoogleAction(View view) {
@@ -36,9 +41,10 @@ public class LoginActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void showPasswordAction(View v) {
+    protected void showPasswordAction(View v) {
         EditText contraseña = (EditText) findViewById(R.id.login_password);
         CheckBox mostrar = (CheckBox) findViewById(R.id.show_hide_password);
+
         if (mostrar.isChecked()) {
             contraseña.setInputType(InputType.TYPE_CLASS_TEXT |
                     InputType.TYPE_TEXT_VARIATION_NORMAL);
@@ -48,5 +54,27 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
+    protected void validateForm() {
+        String email = ((EditText) findViewById(R.id.login_emailid)).getText().toString();
+        String password = ((EditText) findViewById(R.id.login_password)).getText().toString();
+        String s1 = "Introduce tus credenciales.";
+        String s2 = "Introduce una dirección de email correcta.";
+
+        Pattern pattern = Pattern.compile(regEx);
+        Matcher matcher = pattern.matcher(email);
+
+        if (email.equals("") || email.isEmpty()
+                || password.equals("") || password.isEmpty()) {
+
+            Toast.makeText(this, s1, Toast.LENGTH_LONG).show();
+
+        } else if (!matcher.find()) {
+
+            Toast.makeText(this, s2, Toast.LENGTH_LONG).show();
+
+        } else {
+            finish();
+        }
+    }
 }
 
