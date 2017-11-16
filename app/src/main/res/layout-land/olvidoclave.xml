@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/margen_contorno">
+
+    <TextView
+        android:id="@+id/id_clave_olvidada_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/txt_olvido_su_clave"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/id_clave_olvidada_img"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.485"
+        app:layout_constraintStart_toEndOf="@+id/id_clave_olvidada_img"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.578" />
+
+    <ImageView
+        android:id="@+id/id_clave_olvidada_img"
+        android:layout_width="183dp"
+        android:layout_height="169dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.02"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/forgottenpassword" />
+
+    <TextView
+        android:id="@+id/id_texto_olvido"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/txt_email"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/editText_email"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/editText_email"
+        app:layout_constraintTop_toBottomOf="@+id/id_clave_olvidada_txt"
+        app:layout_constraintVertical_bias="0.006" />
+
+    <EditText
+        android:id="@+id/editText_email"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="@string/txt_hint_clave"
+        android:inputType="textEmailAddress"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/id_clave_olvidada_img"
+        app:layout_constraintTop_toBottomOf="@+id/id_texto_olvido"
+        app:layout_constraintVertical_bias="0.098" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/colorSecondary"
+        android:text="@string/txt_enviar_btn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/editText_email"
+        app:layout_constraintStart_toStartOf="@+id/editText_email"
+        app:layout_constraintTop_toBottomOf="@+id/editText_email" />
+
+</android.support.constraint.ConstraintLayout>

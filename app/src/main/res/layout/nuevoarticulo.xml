@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/id_LinLay_art_A"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:focusedByDefault="true"
+    android:focusableInTouchMode="true">
+
+    <ScrollView
+        android:id="@+id/id_ScrVw_art_A"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/id_LinLay_2_art_A"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="@dimen/margen_contorno">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorPrimary"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <android.support.v7.widget.Toolbar
+                    android:id="@+id/id_Tolb_art_A"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorSecondary"
+                    android:minHeight="?attr/actionBarSize"
+                    android:theme="?attr/actionBarTheme"
+                    app:subtitle="@string/img_foto_articulo_A" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp" />
+
+                <ImageView
+                    android:id="@+id/id_img_art_A"
+                    android:layout_width="match_parent"
+                    android:layout_height="190dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@color/colorBlanco"
+                    android:contentDescription="fotoarticulo"
+                    app:srcCompat="@drawable/web_cab_circulo" />
+
+                <TableLayout
+                    android:id="@+id/TbLay_art_A"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorPrimary"
+                    android:gravity="center_vertical">
+
+                    <TableRow
+                        android:id="@+id/id_TbRow_1_art_A"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical|center_horizontal">
+
+                        <Space
+                            android:layout_width="190dp"
+                            android:layout_height="70dp" />
+
+                        <android.support.design.widget.FloatingActionButton
+                            android:id="@+id/id_cam_art_A"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:clickable="true"
+                            app:srcCompat="@android:drawable/ic_menu_camera" />
+
+                        <Space
+                            android:layout_width="20dp"
+                            android:layout_height="70dp" />
+
+                    </TableRow>
+
+                </TableLayout>
+            </LinearLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/txt_nombre_art_A"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/editText4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:focusedByDefault="false"
+                android:focusableInTouchMode="true"
+                android:hint="@string/hint_nombre_art_A"
+                android:inputType="none|textPersonName"
+                android:selectAllOnFocus="false" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:numeric="decimal"
+                android:text="@string/txt_precio_art_A"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/editText5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/hint_precio_art_A"
+                android:inputType="none|numberDecimal"
+                android:focusableInTouchMode="true"/>
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/txt_descripc_art_A"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+
+            <EditText
+                android:id="@+id/editText3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/hint_descripc_art_A"
+                android:inputType="none|textMultiLine"
+                android:focusableInTouchMode="true"/>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="5dp" />
+
+            <Button
+                android:id="@+id/button5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorSecondary"
+                android:text="@string/guardar_btn"
+                android:focusableInTouchMode="true"/>
+
+
+
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>

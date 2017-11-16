@@ -3,7 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://C:\Users\nakis\Documents\MASTERAndroid\ASIGNATURAS\Herramientas_de_Gestion_de_Proyectos\PROYECTO_MISCOLECCIONES\mycollections\app\app.iml" filepath="C:\Users\nakis\Documents\MASTERAndroid\ASIGNATURAS\Herramientas_de_Gestion_de_Proyectos\PROYECTO_MISCOLECCIONES\mycollections\app\app.iml" />
       <module fileurl="file://$PROJECT_DIR$/mycollections.iml" filepath="$PROJECT_DIR$/mycollections.iml" />
+      <module fileurl="file://C:\Users\nakis\Documents\MASTERAndroid\ASIGNATURAS\Herramientas_de_Gestion_de_Proyectos\PROYECTO_MISCOLECCIONES\mycollections\mycollections.iml" filepath="C:\Users\nakis\Documents\MASTERAndroid\ASIGNATURAS\Herramientas_de_Gestion_de_Proyectos\PROYECTO_MISCOLECCIONES\mycollections\mycollections.iml" />
     </modules>
   </component>
 </project>
