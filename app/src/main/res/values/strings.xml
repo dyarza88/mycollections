@@ -35,4 +35,30 @@
     <string name="registered_emailid">Por favor, introduce un email válido:</string>
     <string name="submit">ENTRAR</string>
     <string name="back">ATRÁS</string>
+
+
+
+
+    <string name="descripc_img_forgottenpassword">imagen descriptiva</string>
+    <string name="txt_olvido_su_clave">¿Olvidó su contraseña?</string>
+    <string name="txt_email">Introduce debajo tu e-mail y recibirás una nueva contraseña</string>
+    <string name="txt_hint_clave">Introduce e-mail</string>
+    <string name="txt_enviar_btn">Enviar</string>
+    <string name="guardar_btn">Guardar</string>
+    <string name="txt_nombre_coleccion">Nombre Colección:</string>
+    <string name="txt_hint_nombCol">Nombre Colección</string>
+    <string name="txt_elems_totales_undef">Indefinido</string>
+    <string name="txt_elems_totales_def">Limitado</string>
+    <string name="txt_num_elems_colecc">Nº elementos:</string>
+    <string name="txt_elems_totales">Total:</string>
+    <string name="num_elems_totales">Introduzca un nº</string>
+    <string name="img_foto_articulo_A">cromos</string>
+    <string name="img_foto_articulo_B">sellos</string>
+    <string name="txt_nombre_art_A">Nobre del artículo:</string>
+    <string name="hint_nombre_art_A">Nombre del artículo</string>
+    <string name="txt_descripc_art_A">Añade descripción:</string>
+    <string name="hint_descripc_art_A">Descripción...</string>
+    <string name="txt_precio_art_A">Añade un precio:</string>
+    <string name="hint_precio_art_A">Precio</string>
+
 </resources>
