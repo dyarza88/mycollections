@@ -36,9 +36,6 @@
     <string name="submit">ENTRAR</string>
     <string name="back">ATRÁS</string>
 
-
-
-
     <string name="descripc_img_forgottenpassword">imagen descriptiva</string>
     <string name="txt_olvido_su_clave">¿Olvidó su contraseña?</string>
     <string name="txt_email">Introduce debajo tu e-mail y recibirás una nueva contraseña</string>
@@ -61,4 +58,14 @@
     <string name="txt_precio_art_A">Añade un precio:</string>
     <string name="hint_precio_art_A">Precio</string>
 
+    <string name="perfil_usuario">Perfil Usuario</string>
+    <string name="nombre_usuario">Nombre:</string>
+    <string name="descripcion_imagen">Imagen de Usuario</string>
+    <string name="accion_cancelar">Cancelar</string>
+    <string name="accion_aceptar">Aceptar</string>
+    <string name="hint_nombre">Nombre</string>
+    <string name="hint_telefono">Teléfono</string>
+    <string name="hint_correo">E-Mail</string>
+    <string name="hint_localidad">Localidad</string>
+    <string name="hint_coleccionistaDe">Coleccionista de …</string>
 </resources>
