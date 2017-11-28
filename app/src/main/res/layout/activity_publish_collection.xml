@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/margen_contorno">
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/id_btnflot_camara"
+        android:layout_width="0dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="162dp"
+        android:layout_marginTop="162dp"
+        android:background="@color/colorPrimaryDark"
+        android:clickable="true"
+        android:tint="@color/cardview_shadow_end_color"
+        app:elevation="15dp"
+        app:layout_constraintStart_toStartOf="@+id/id_img_coleccion"
+        app:layout_constraintTop_toTopOf="@+id/id_img_coleccion"
+        app:srcCompat="@android:drawable/ic_menu_camera"/>
+
+    <ImageView
+        android:id="@+id/id_img_coleccion"
+        android:layout_width="190dp"
+        android:layout_height="190dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:focusable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.43"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/web_cab_circulo"/>
+
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/til_price"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_gravity="right"
+        android:textColorHint="@color/colorAccent"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/spinner_collections"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <EditText
+            android:id="@+id/campo_precio"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="@string/precio"
+            android:inputType="number"
+            android:text="69€"
+            android:textColorLink="@color/colorPrimary"
+            android:textSize="15sp"
+            />
+    </android.support.design.widget.TextInputLayout>
+
+    <Spinner
+        android:id="@+id/spinner_collections"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/colorAccent"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/saveBtn"/>
+
+
+    <Button
+        android:id="@+id/saveBtn"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:background="@drawable/loginbutton_selector"
+        android:onClick="publishCollection"
+        android:padding="3dp"
+        android:text="@string/publicar"
+        android:textColor="@color/colorAccent"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+</android.support.constraint.ConstraintLayout>

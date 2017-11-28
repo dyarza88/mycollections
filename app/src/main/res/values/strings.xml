@@ -77,4 +77,6 @@
     <string name="validation4">Introduce tus credenciales.</string>
     <string name="validation5">Introduce una dirección de email correcta.</string>
     <string name="buscador">buscador</string>
+    <string name="publicar">Publicar</string>
+    <string name="precio">Precio:</string>
 </resources>

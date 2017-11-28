@@ -23,6 +23,8 @@
         <activity android:name=".ImageSelectActivity"/>
         <activity android:name=".MarketActivity">
         </activity>
+        <activity android:name=".PublishCollectionActivity">
+        </activity>
     </application>
 
 </manifest>
