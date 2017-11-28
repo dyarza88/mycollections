@@ -22,7 +22,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    private String[] mPlanetTitles;
+    private String[] mTitles;
     private DrawerLayout mDrawerLayout;
     private ListView mDrawerList;
     private ActionBarDrawerToggle mDrawerToggle;
@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mPlanetTitles = getResources().getStringArray(R.array.menu_array);
+        mTitles = getResources().getStringArray(R.array.menu_array);
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mDrawerList = (ListView) findViewById(R.id.left_drawer);
 
@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Set the adapter for the list view
         mDrawerList.setAdapter(new ArrayAdapter<>(this,
-                R.layout.drawer_list_item, mPlanetTitles));
+                R.layout.drawer_list_item, mTitles));
         // Set the list's click listener
         mDrawerList.setOnItemClickListener(new DrawerItemClickListener());
 
@@ -122,9 +122,14 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(this, "POS: " + position, Toast.LENGTH_SHORT).show();
         switch(position){
             case 4:
-                Intent i = new Intent(this, LoginActivity.class);
-                startActivity(i);
+                startActivity(
+                        new Intent(this, LoginActivity.class));
                 break;
+            case 1:
+                startActivity(
+                        new Intent(this, MarketActivity.class));
+                break;
+
         }
     }
 

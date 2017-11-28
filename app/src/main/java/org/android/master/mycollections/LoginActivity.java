@@ -38,12 +38,12 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     protected void loginGoogleAction(View view) {
-        String s = "Acceder con tu cuenta de google.";
+        String s = getString(R.string.validation1);
         Toast.makeText(this, s, Toast.LENGTH_LONG).show();
     }
 
     protected void forgetPasswordAction(View view) {
-        String s = "HE OLVIDADO MI CONTRASEÑA";
+        String s = getString(R.string.forgotPAssword);
         Toast.makeText(this, s, Toast.LENGTH_LONG).show();
     }
 
@@ -68,8 +68,8 @@ public class LoginActivity extends AppCompatActivity {
     protected void validateForm() {
         String email = ((EditText) findViewById(R.id.login_emailid)).getText().toString();
         String password = ((EditText) findViewById(R.id.login_password)).getText().toString();
-        String s1 = "Introduce tus credenciales.";
-        String s2 = "Introduce una dirección de email correcta.";
+        String s1 = getString(R.string.validation4);
+        String s2 = getString(R.string.validation5);
 
         Pattern pattern = Pattern.compile(regEx);
         Matcher matcher = pattern.matcher(email);

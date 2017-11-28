@@ -68,4 +68,13 @@
     <string name="hint_correo">E-Mail</string>
     <string name="hint_localidad">Localidad</string>
     <string name="hint_coleccionistaDe">Coleccionista de …</string>
+    <string name="googleAccess">Acceder con tu cuenta de google.</string>
+    <string name="lie">MENTIRA</string>
+    <string name="validation1">Introduce un correo electrónico válido</string>
+    <string name="validation2">Introduce una contraseña</string>
+    <string name="validation3">Las contraseñas no coinciden</string>
+    <string name="forgotPAssword">HE OLVIDADO MI CONTRASEÑA</string>
+    <string name="validation4">Introduce tus credenciales.</string>
+    <string name="validation5">Introduce una dirección de email correcta.</string>
+    <string name="buscador">buscador</string>
 </resources>
