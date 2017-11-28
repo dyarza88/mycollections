@@ -1,5 +1,6 @@
 package org.android.master.mycollections;
 
+import android.content.Intent;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -85,7 +86,8 @@ public class MarketActivity extends AppCompatActivity implements SearchView.OnQu
     }
 
     public void nuevaColeccion(MenuItem item){
-        Toast.makeText(getApplicationContext(), "Añadiendo nueva colección...", Toast.LENGTH_LONG).show();
+        //Toast.makeText(getApplicationContext(), "Añadiendo nueva colección...", Toast.LENGTH_LONG).show();
+        startActivity(new Intent(this, PublishCollectionActivity.class));
     }
 
     public void cargarColecciones() {
