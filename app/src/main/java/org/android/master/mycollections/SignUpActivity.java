@@ -26,12 +26,12 @@ public class SignUpActivity extends AppCompatActivity {
     }
 
     protected void loginGoogleAction(View view) {
-        String s = "Acceder con tu cuenta de google.";
+        String s = getString(R.string.googleAccess);
         Toast.makeText(this, s, Toast.LENGTH_LONG).show();
     }
 
     protected void conditionAction(View view) {
-        String s = "MENTIRA";
+        String s = getString(R.string.lie);
 
         findViewById(R.id.signUpBtn).setEnabled(!findViewById(R.id.signUpBtn).isEnabled());
         Toast.makeText(this, s, Toast.LENGTH_LONG).show();
@@ -45,9 +45,9 @@ public class SignUpActivity extends AppCompatActivity {
         String email = ((EditText) findViewById(R.id.userEmailId)).getText().toString();
         String password1 = ((EditText) findViewById(R.id.password)).getText().toString();
         String password2 = ((EditText) findViewById(R.id.confirmPassword)).getText().toString();
-        String s1 = "Introduce un correo electrónico válido";
-        String s2 = "Introduce una contraseña";
-        String s3 = "Las contraseñas no coinciden";
+        String s1 = getString(R.string.validation1);
+        String s2 = getString(R.string.validation2);
+        String s3 = getString(R.string.validation3);
 
         Pattern pattern = Pattern.compile(regEx);
         Matcher matcher = pattern.matcher(email);
