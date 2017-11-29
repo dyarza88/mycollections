@@ -15,9 +15,9 @@
         android:gravity="center"
         android:padding="10dp"
         android:text="@string/signUp"
-        android:textColor="@color/colorPrimary"
+        android:textColor="@color/colorPrimaryDark"
         android:textSize="25sp"
-        android:textStyle="bold"/>
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/fullName"
@@ -32,9 +32,9 @@
         android:inputType="textCapWords"
         android:padding="10dp"
         android:singleLine="true"
-        android:textColor="@color/colorAccent"
-        android:textColorHint="@color/colorAccent"
-        android:textSize="16sp"/>
+        android:textColor="@color/colorSecondary"
+        android:textColorHint="@color/colorSecondary"
+        android:textSize="16sp" />
 
     <View
         android:layout_width="fill_parent"
@@ -54,9 +54,9 @@
         android:inputType="textEmailAddress"
         android:padding="10dp"
         android:singleLine="true"
-        android:textColor="@color/colorAccent"
-        android:textColorHint="@color/colorAccent"
-        android:textSize="16sp"/>
+        android:textColor="@color/colorSecondary"
+        android:textColorHint="@color/colorSecondary"
+        android:textSize="16sp" />
 
     <View
         android:layout_width="fill_parent"
@@ -76,9 +76,9 @@
         android:inputType="phone"
         android:padding="10dp"
         android:singleLine="true"
-        android:textColor="@color/colorAccent"
-        android:textColorHint="@color/colorAccent"
-        android:textSize="16sp"/>
+        android:textColor="@color/colorSecondary"
+        android:textColorHint="@color/colorSecondary"
+        android:textSize="16sp" />
 
     <View
         android:layout_width="fill_parent"
@@ -98,9 +98,9 @@
         android:inputType="textCapWords"
         android:padding="10dp"
         android:singleLine="true"
-        android:textColor="@color/colorAccent"
-        android:textColorHint="@color/colorAccent"
-        android:textSize="16sp"/>
+        android:textColor="@color/colorSecondary"
+        android:textColorHint="@color/colorSecondary"
+        android:textSize="16sp" />
 
     <View
         android:layout_width="fill_parent"
@@ -120,9 +120,9 @@
         android:inputType="textPassword"
         android:padding="10dp"
         android:singleLine="true"
-        android:textColor="@color/colorAccent"
-        android:textColorHint="@color/colorAccent"
-        android:textSize="16sp"/>
+        android:textColor="@color/colorSecondary"
+        android:textColorHint="@color/colorSecondary"
+        android:textSize="16sp" />
 
     <View
         android:layout_width="fill_parent"
@@ -142,9 +142,9 @@
         android:inputType="textPassword"
         android:padding="10dp"
         android:singleLine="true"
-        android:textColor="@color/colorAccent"
-        android:textColorHint="@color/colorAccent"
-        android:textSize="16sp"/>
+        android:textColor="@color/colorSecondary"
+        android:textColorHint="@color/colorSecondary"
+        android:textSize="16sp" />
 
     <CheckBox
         android:id="@+id/terms_conditions"
@@ -153,21 +153,21 @@
         android:layout_marginTop="7dp"
         android:onClick="conditionAction"
         android:text="@string/terms_conditions"
-        android:textColor="@color/colorAccent"
-        android:textSize="14sp"/>
+        android:textColor="@color/colorSecondary"
+        android:textSize="14sp" />
 
     <Button
         android:id="@+id/signUpBtn"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:background="@drawable/loginbutton_selector"
+        android:background="@color/colorSecondary"
         android:onClick="signupAction"
         android:padding="3dp"
         android:text="@string/signUp"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/colorPrimaryDark"
         android:textSize="17sp"
-        android:textStyle="bold"/>
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/signUpGoogleBtn"
@@ -178,9 +178,9 @@
         android:onClick="loginGoogleAction"
         android:padding="3dp"
         android:text="@string/signUpGoogle"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/colorPrimaryDark"
         android:textSize="17sp"
-        android:textStyle="bold"/>
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/already_user"
@@ -192,8 +192,8 @@
         android:onClick="loginAction"
         android:padding="10dp"
         android:text="@string/already_user"
-        android:textColor="@color/colorPrimary"
-        android:textSize="15sp"/>
+        android:textColor="@color/colorSecondary"
+        android:textSize="15sp" />
 
 </LinearLayout>
 </ScrollView>

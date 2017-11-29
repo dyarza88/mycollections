@@ -15,7 +15,8 @@
         android:background="@color/colorPrimaryDark"
         android:clickable="true"
         android:tint="@color/cardview_shadow_end_color"
-        app:elevation="15dp"
+        app:backgroundTint="@color/colorSecondary"
+        app:elevation="6dp"
         app:layout_constraintStart_toStartOf="@+id/id_img_coleccion"
         app:layout_constraintTop_toTopOf="@+id/id_img_coleccion"
         app:srcCompat="@android:drawable/ic_menu_camera" />
@@ -46,6 +47,7 @@
         android:layout_marginStart="8dp"
         android:text="@string/txt_nombre_coleccion"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="@color/colorPrimaryDark"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/editText"
         app:layout_constraintEnd_toEndOf="parent"
@@ -62,6 +64,7 @@
         android:ems="10"
         android:hint="@string/txt_hint_nombCol"
         android:inputType="none"
+        android:textColorHint="@color/colorSecondary"
         app:layout_constraintBottom_toTopOf="@+id/textView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -76,6 +79,7 @@
         android:layout_marginStart="8dp"
         android:text="@string/txt_num_elems_colecc"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@color/colorPrimaryDark"
         app:layout_constraintBottom_toTopOf="@+id/editText2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -90,6 +94,7 @@
         android:ems="10"
         android:hint="@string/num_elems_totales"
         android:inputType="textPersonName"
+        android:textColorHint="@color/colorSecondary"
         app:layout_constraintBottom_toTopOf="@+id/button3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -103,6 +108,7 @@
         android:layout_marginStart="8dp"
         android:background="@color/colorSecondary"
         android:text="@string/guardar_btn"
+        android:textColor="@color/colorPrimaryDark"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

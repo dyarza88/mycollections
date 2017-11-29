@@ -66,7 +66,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="32dp"
-            android:textColorHint="@color/colorAccent"
+            android:textColorHint="@color/colorSecondary"
             android:theme="@style/AppTheme">
 
             <EditText
@@ -102,7 +102,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="32dp"
-            android:textColorHint="@color/colorAccent">
+            android:textColorHint="@color/colorSecondary">
 
             <EditText
                 android:id="@+id/campo_telefono"
@@ -112,7 +112,7 @@
                 android:hint="@string/hint_telefono"
                 android:inputType="phone"
                 android:text="650987654"
-                android:textColorLink="@color/colorPrimary"
+                android:textColorLink="@color/colorPrimaryDark"
                 android:textSize="15sp"
                 tools:layout_marginRight="35dp" />
         </android.support.design.widget.TextInputLayout>
@@ -137,7 +137,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="32dp"
-            android:textColorHint="@color/colorAccent">
+            android:textColorHint="@color/colorSecondary">
 
             <EditText
                 android:id="@+id/campo_correo"
@@ -175,7 +175,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="32dp"
-            android:textColorHint="@color/colorAccent">
+            android:textColorHint="@color/colorSecondary">
 
             <EditText
                 android:id="@+id/campo_localidad"
@@ -188,6 +188,7 @@
                 android:singleLine="true"
                 android:text="Zaragoza"
                 android:textColorLink="@color/colorPrimary"
+                android:textColorHint="@color/colorAccent"
                 android:textSize="15sp" />
         </android.support.design.widget.TextInputLayout>
     </LinearLayout>
@@ -212,8 +213,8 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="32dp"
             android:text="@string/hint_coleccionistaDe"
-            android:textColor="@color/colorAccent"
-            android:textColorHint="@color/colorAccent" />
+            android:textColor="@color/colorSecondary"
+            android:textColorHint="@color/colorSecondary" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -275,8 +276,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@color/colorAccent"
+            android:background="@color/colorSecondary"
             android:text="GUARDAR"
+            android:textColor="@color/colorPrimaryDark"
             android:textStyle="bold" />
     </LinearLayout>
 

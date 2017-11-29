@@ -58,6 +58,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:clickable="true"
+                    app:backgroundTint="@color/colorSecondary"
                     app:srcCompat="@android:drawable/ic_menu_camera" />
 
             </TableRow>
@@ -82,6 +83,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/txt_nombre_art_A"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:textColor="@color/colorPrimaryDark"
                 android:textSize="18sp" />
 
             <EditText
@@ -92,7 +94,8 @@
                 android:focusableInTouchMode="true"
                 android:hint="@string/hint_nombre_art_A"
                 android:inputType="none|textPersonName"
-                android:selectAllOnFocus="false" />
+                android:selectAllOnFocus="false"
+                android:textColorHint="@color/colorSecondary" />
 
             <TextView
                 android:id="@+id/textView5"
@@ -101,6 +104,7 @@
                 android:numeric="decimal"
                 android:text="@string/txt_precio_art_A"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:textColor="@color/colorPrimaryDark"
                 android:textSize="14sp" />
 
             <EditText
@@ -110,14 +114,16 @@
                 android:ems="10"
                 android:focusableInTouchMode="true"
                 android:hint="@string/hint_precio_art_A"
-                android:inputType="none|numberDecimal" />
+                android:inputType="none|numberDecimal"
+                android:textColorHint="@color/colorSecondary" />
 
             <TextView
                 android:id="@+id/textView4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/txt_descripc_art_A"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:textColor="@color/colorPrimaryDark" />
 
             <EditText
                 android:id="@+id/editText3"
@@ -126,7 +132,8 @@
                 android:ems="10"
                 android:focusableInTouchMode="true"
                 android:hint="@string/hint_descripc_art_A"
-                android:inputType="none|textMultiLine" />
+                android:inputType="none|textMultiLine"
+                android:textColorHint="@color/colorSecondary" />
 
             <Space
                 android:layout_width="match_parent"
@@ -137,8 +144,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/colorSecondary"
+                android:focusableInTouchMode="true"
                 android:text="@string/guardar_btn"
-                android:focusableInTouchMode="true"/>
+                android:textColor="@color/colorPrimaryDark" />
         </LinearLayout>
     </ScrollView>
 

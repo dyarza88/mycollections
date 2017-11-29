@@ -1,53 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@color/colorAccent"
-    android:gravity="center_vertical|center_horizontal|center"
-    android:padding="@dimen/margen_contorno">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <TableRow
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:gravity="center_vertical|center_horizontal">
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="match_parent"
+        android:layout_height="164dp"
+        android:background="@color/colorAccent"
+        android:gravity="center_vertical|center_horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <Space
-            android:layout_width="20dp"
-            android:layout_height="70dp" />
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical|center_horizontal">
 
-        <android.support.design.widget.FloatingActionButton
-            android:id="@+id/floatingActionButton4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:clickable="true"
-            app:srcCompat="@android:drawable/ic_menu_camera" />
+            <Space
+                android:layout_width="20dp"
+                android:layout_height="70dp" />
 
-        <Space
-            android:layout_width="40dp"
-            android:layout_height="70dp" />
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/floatingActionButton4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                app:backgroundTint="@color/colorSecondary"
+                app:srcCompat="@android:drawable/ic_menu_camera" />
 
-        <android.support.design.widget.FloatingActionButton
-            android:id="@+id/floatingActionButton3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:clickable="true"
-            app:srcCompat="@android:drawable/ic_menu_crop" />
+            <Space
+                android:layout_width="40dp"
+                android:layout_height="70dp" />
 
-        <Space
-            android:layout_width="40dp"
-            android:layout_height="70dp" />
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/floatingActionButton3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                app:backgroundTint="@color/colorSecondary"
+                app:srcCompat="@android:drawable/ic_menu_crop" />
 
-        <android.support.design.widget.FloatingActionButton
-            android:id="@+id/floatingActionButton2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:clickable="true"
-            app:srcCompat="@android:drawable/ic_menu_delete" />
+            <Space
+                android:layout_width="40dp"
+                android:layout_height="70dp" />
 
-        <Space
-            android:layout_width="20dp"
-            android:layout_height="70dp" />
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/floatingActionButton2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                app:backgroundTint="@color/colorSecondary"
+                app:srcCompat="@android:drawable/ic_menu_delete" />
 
-    </TableRow>
-</TableLayout>
+            <Space
+                android:layout_width="20dp"
+                android:layout_height="70dp" />
+
+        </TableRow>
+    </TableLayout>
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="190dp"
+        android:layout_height="190dp"
+        android:layout_marginBottom="48dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tableLayout"
+        app:srcCompat="@drawable/web_cab_circulo" />
+</android.support.constraint.ConstraintLayout>

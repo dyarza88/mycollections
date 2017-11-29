@@ -20,9 +20,9 @@
                 android:gravity="center"
                 android:padding="10dp"
                 android:text="@string/login"
-                android:textColor="@color/colorPrimary"
+                android:textColor="@color/colorPrimaryDark"
                 android:textSize="25sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
             <ImageView
                 android:id="@+id/logo"
@@ -45,9 +45,9 @@
                 android:inputType="textEmailAddress"
                 android:padding="10dp"
                 android:singleLine="true"
-                android:textColor="@color/colorAccent"
-                android:textColorHint="@color/colorAccent"
-                android:textSize="16sp"/>
+                android:textColor="@android:color/black"
+                android:textColorHint="@color/colorSecondary"
+                android:textSize="16sp" />
 
             <View
                 android:layout_width="fill_parent"
@@ -66,9 +66,9 @@
                 android:inputType="textPassword"
                 android:padding="10dp"
                 android:singleLine="true"
-                android:textColor="@color/colorAccent"
-                android:textColorHint="@color/colorAccent"
-                android:textSize="16sp"/>
+                android:textColor="@android:color/black"
+                android:textColorHint="@color/colorSecondary"
+                android:textSize="16sp" />
 
             <LinearLayout
                 android:layout_width="fill_parent"
@@ -84,8 +84,8 @@
                     android:layout_weight="1"
                     android:onClick="showPasswordAction"
                     android:text="@string/show_pwd"
-                    android:textColor="@color/colorAccent"
-                    android:textSize="12sp"/>
+                    android:textColor="@color/colorSecondary"
+                    android:textSize="12sp" />
 
                 <TextView
                     android:id="@+id/forgot_password"
@@ -96,8 +96,8 @@
                     android:onClick="forgetPasswordAction"
                     android:padding="5dp"
                     android:text="@string/forgot"
-                    android:textColor="@color/colorAccent"
-                    android:textSize="12sp"/>
+                    android:textColor="@color/colorSecondary"
+                    android:textSize="12sp" />
             </LinearLayout>
 
             <Button
@@ -105,26 +105,26 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:background="@drawable/loginbutton_selector"
+                android:background="@color/colorSecondary"
                 android:onClick="loginAction"
                 android:padding="3dp"
                 android:text="@string/login"
-                android:textColor="#009688"
+                android:textColor="@color/colorPrimaryDark"
                 android:textSize="17sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
             <Button
                 android:id="@+id/loginGoogleBtn"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="3dp"
-                android:background="@drawable/loginbutton_selector"
+                android:background="@color/colorSecondary"
                 android:onClick="loginGoogleAction"
                 android:padding="3dp"
                 android:text="@string/loginGoogle"
-                android:textColor="@color/colorAccent"
+                android:textColor="@color/colorPrimaryDark"
                 android:textSize="17sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
         </LinearLayout>
 
         <TextView
@@ -138,8 +138,8 @@
             android:onClick="signupAction"
             android:padding="5dp"
             android:text="@string/newUser"
-            android:textColor="@color/colorAccent"
-            android:textSize="15sp"/>
+            android:textColor="@color/colorSecondary"
+            android:textSize="15sp" />
 
     </RelativeLayout>
 </ScrollView>
