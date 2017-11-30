@@ -10,7 +10,7 @@ import java.util.Vector;
  */
 
 public interface AlmacenObjetos {
-    public Vector<String> listaObjetos(int cantidad);
-    public int[] listaFotos(int cantidad);
-    public Vector<String>cantidades();
+    public Vector<String> listaObjetos(int tipo);
+    public int[] listaFotos(int tipo);
+    public Vector<String>cantidades(int tipo);
 }

@@ -41,15 +41,15 @@ public class AlmacenColecciones implements AlmacenObjetos {
     }
 
     @Override
-    public Vector<String> listaObjetos(int cantidad) {
+    public Vector<String> listaObjetos(int tipo) {
         return colecciones;
     }
 
     @Override
-    public int[] listaFotos(int cantidad){return imagcol;}
+    public int[] listaFotos(int tipo){return imagcol;}
 
     @Override
-    public Vector<String> cantidades() {
+    public Vector<String> cantidades(int tipo) {
         return porcentaje_completo;
     }
 

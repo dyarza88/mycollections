@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         recyclerView=(RecyclerView)findViewById(R.id.contenedor_rv_miscoleccsB);
-        adaptadormC=new AdaptadormC(this,almacenColecciones.listaObjetos(1),almacenColecciones.listaFotos(1),almacenColecciones.cantidades());
+        adaptadormC=new AdaptadormC(this,almacenColecciones.listaObjetos(1),almacenColecciones.listaFotos(1),almacenColecciones.cantidades(1));
         recyclerView.setAdapter(adaptadormC);
         layoutManager=new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);

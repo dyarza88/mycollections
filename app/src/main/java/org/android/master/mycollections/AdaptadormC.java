@@ -45,10 +45,7 @@ public class AdaptadormC extends RecyclerView.Adapter<AdaptadormC.ViewHolder> {
     public void onBindViewHolder(ViewHolder holder, int position) {
 
         holder.titulo.setText(lista.get(position));
-
-            holder.icon.setImageResource(fotos[position]);
-
-
+        holder.icon.setImageResource(fotos[position]);
         holder.subtitulo.setText(porcentaje_completo.get(position));//hacer otra lógica al respecto
     }
 
