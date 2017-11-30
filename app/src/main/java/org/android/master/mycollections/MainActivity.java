@@ -39,10 +39,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //setContentView(R.layout.memoriaactivity_main);
 
 
         recyclerView=(RecyclerView)findViewById(R.id.contenedor_rv_miscoleccsB);
-        adaptadormC=new AdaptadormC(this,almacenColecciones.listaObjetos(1));
+        adaptadormC=new AdaptadormC(this,almacenColecciones.listaObjetos(1),almacenColecciones.listaFotos(1),almacenColecciones.cantidades());
         recyclerView.setAdapter(adaptadormC);
         layoutManager=new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
@@ -61,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, "¡Viva!", Toast.LENGTH_SHORT).show();
             }
         });
+
 
 
         mTitles = getResources().getStringArray(R.array.menu_array);

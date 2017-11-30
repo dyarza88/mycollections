@@ -1,5 +1,8 @@
 package org.android.master.mycollections;
 
+import android.graphics.drawable.Drawable;
+import android.widget.ImageView;
+
 import java.util.Vector;
 
 /**
@@ -8,4 +11,6 @@ import java.util.Vector;
 
 public interface AlmacenObjetos {
     public Vector<String> listaObjetos(int cantidad);
+    public int[] listaFotos(int cantidad);
+    public Vector<String>cantidades();
 }

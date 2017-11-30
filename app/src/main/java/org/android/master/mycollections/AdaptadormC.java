@@ -18,14 +18,20 @@ public class AdaptadormC extends RecyclerView.Adapter<AdaptadormC.ViewHolder> {
 
     private LayoutInflater inflador;
     private Vector<String> lista;
+    private Vector<String> porcentaje_completo;
+    private int[]fotos;
     int coloOart;
 
 
     protected View.OnClickListener onClickListener;
 
-    public AdaptadormC(Context context, Vector<String> strings) {
+    public AdaptadormC(Context context, Vector<String> strings, int[] listaFotos,Vector<String> porcentaje_completo) {
         this.lista=strings;
         inflador=(LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        this.porcentaje_completo=porcentaje_completo;
+        fotos=new int[5];
+        fotos=listaFotos;
+
     }
 
     @Override
@@ -39,44 +45,11 @@ public class AdaptadormC extends RecyclerView.Adapter<AdaptadormC.ViewHolder> {
     public void onBindViewHolder(ViewHolder holder, int position) {
 
         holder.titulo.setText(lista.get(position));
-        //hacer lógicca para el holder icon
-        if(lista.size()==3){
-            switch (position){
-                case 0:
-                    holder.icon.setImageResource(R.drawable.cromomessi);
-                    break;
-                case 1:
-                    holder.icon.setImageResource(R.drawable.reyemerito);
-                    break;
-                case 2:
-                    holder.icon.setImageResource(R.drawable.dobla);
-                    break;
-            }
 
-        }else {
-            switch (position) {
-                case 0:
-                    holder.icon.setImageResource(R.drawable.coleccion_cromos);
-                    break;
-                case 1:
-                    holder.icon.setImageResource(R.drawable.coleccion_heman);
-                    break;
-                case 2:
-                    holder.icon.setImageResource(R.drawable.coleccion_sellos);
-                    break;
-                case 3:
-                    holder.icon.setImageResource(R.drawable.coleccion_cromos);
-                    break;
-                case 4:
-                    holder.icon.setImageResource(R.drawable.ic_shoes_collection);
-                    break;
-                case 5:
-                    holder.icon.setImageResource(R.drawable.ic_coins_collection);
-                    break;
+            holder.icon.setImageResource(fotos[position]);
 
-            }
-        }
-        holder.subtitulo.setText("50/200");//hacer otra lógica al respecto
+
+        holder.subtitulo.setText(porcentaje_completo.get(position));//hacer otra lógica al respecto
     }
 
     @Override

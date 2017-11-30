@@ -1,5 +1,7 @@
 package org.android.master.mycollections;
 
+import android.graphics.drawable.Drawable;
+
 import java.util.Vector;
 
 /**
@@ -19,5 +21,15 @@ public class AlmacenArticulos implements AlmacenObjetos {
     @Override
     public Vector<String> listaObjetos(int cantidad) {
         return articulos;
+    }
+
+    @Override
+    public int[] listaFotos(int cantidad) {
+        return null;
+    }
+
+    @Override
+    public Vector<String> cantidades() {
+        return null;
     }
 }

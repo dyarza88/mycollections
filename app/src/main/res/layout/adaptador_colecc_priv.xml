@@ -33,7 +33,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/cardViewTitleBackground"
+                android:background="@color/colorSecondary"
                 android:orientation="horizontal"
                 android:padding="7dp">
 
@@ -42,14 +42,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Colección de cromos"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/cantColecc_txt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="right"
-                    android:text="50 / 100"/>
+                    android:text="50 / 100" />
             </LinearLayout>
 
 
