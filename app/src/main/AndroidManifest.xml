@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="org.android.master.mycollections">
+          package="org.jrzdy.master.mycollections">
 
     <application
         android:allowBackup="true"
@@ -9,26 +9,28 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name="org.jrzdy.master.mycollections.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".LoginActivity"/>
-        <activity android:name=".SignUpActivity"/>
-        <activity android:name=".NewCollectionActivity"/>
-        <activity android:name=".ForgotPasswordActivity"/>
-        <activity android:name=".ImageSelectActivity"/>
-        <activity android:name=".MarketActivity">
+        <activity android:name="org.jrzdy.master.mycollections.LoginActivity"/>
+        <activity android:name="org.jrzdy.master.mycollections.SignUpActivity"/>
+        <activity android:name="org.jrzdy.master.mycollections.NewCollectionActivity"/>
+        <activity android:name="org.jrzdy.master.mycollections.ForgotPasswordActivity"/>
+        <activity android:name="org.jrzdy.master.mycollections.ImageSelectActivity"/>
+        <activity android:name="org.jrzdy.master.mycollections.MarketActivity">
         </activity>
-        <activity android:name=".PublishCollectionActivity">
+        <activity android:name="org.jrzdy.master.mycollections.PublishCollectionActivity">
         </activity>
-        <activity android:name=".EditCollectionActivity">
+        <activity android:name="org.jrzdy.master.mycollections.EditCollectionActivity">
         </activity>
-        <activity android:name=".NuevoArticulo">
+        <activity android:name="org.jrzdy.master.mycollections.NuevoArticulo">
         </activity>
+        <activity android:name="org.jrzdy.master.mycollections.TablonAnuncios"></activity>
+        <activity android:name="org.jrzdy.master.mycollections.EditarPerfil"></activity>
     </application>
 
 </manifest>

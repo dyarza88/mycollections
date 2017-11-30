@@ -4,7 +4,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:padding="3dp"
-                tools:context="org.android.master.mycollections.MarketActivity">
+                tools:context="org.jrzdy.master.mycollections.MarketActivity">
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rvColecciones"
