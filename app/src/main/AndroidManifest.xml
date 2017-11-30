@@ -25,6 +25,10 @@
         </activity>
         <activity android:name=".PublishCollectionActivity">
         </activity>
+        <activity android:name=".EditCollectionActivity">
+        </activity>
+        <activity android:name=".NuevoArticulo">
+        </activity>
     </application>
 
 </manifest>
