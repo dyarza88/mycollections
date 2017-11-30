@@ -121,8 +121,13 @@ public class MainActivity extends AppCompatActivity {
     private void selectItem(int position) {
         Toast.makeText(this, "POS: " + position, Toast.LENGTH_SHORT).show();
         switch(position){
+            case 3:
+                Intent i =new Intent(this,TablonAnuncios.class);
+                startActivity(i);
+                break;
+
             case 4:
-                Intent i = new Intent(this, LoginActivity.class);
+                i = new Intent(this, LoginActivity.class);
                 startActivity(i);
                 break;
         }
