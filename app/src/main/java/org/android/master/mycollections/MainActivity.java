@@ -9,6 +9,9 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.CardView;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -26,11 +29,39 @@ public class MainActivity extends AppCompatActivity {
     private DrawerLayout mDrawerLayout;
     private ListView mDrawerList;
     private ActionBarDrawerToggle mDrawerToggle;
+    public static AlmacenColecciones almacenColecciones=new AlmacenColecciones();
+    public static AlmacenArticulos almacenArticulos=new AlmacenArticulos();
+    private RecyclerView recyclerView;
+    private RecyclerView.LayoutManager layoutManager;
+    private AdaptadormC adaptadormC;
 
-    @Override
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+        recyclerView=(RecyclerView)findViewById(R.id.contenedor_rv_miscoleccsB);
+        adaptadormC=new AdaptadormC(this,almacenColecciones.listaObjetos(1));
+        recyclerView.setAdapter(adaptadormC);
+        layoutManager=new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(layoutManager);
+
+
+        adaptadormC.setOnItemClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int pos=recyclerView.getChildAdapterPosition(v);
+                String s=MainActivity.almacenColecciones.listaObjetos(1).get(pos);
+                //Intent i=new Intent(this,EditCollectionActivity.class);
+                //i.putExtra("clave",valor);
+                //startActivity(i);
+                Intent i = new Intent(getApplicationContext(), EditCollectionActivity.class);
+                startActivity(i);
+                Toast.makeText(MainActivity.this, "¡Viva!", Toast.LENGTH_SHORT).show();
+            }
+        });
+
 
         mTitles = getResources().getStringArray(R.array.menu_array);
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -70,11 +101,12 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
 
+/*
         // Load the main view
         Fragment fragment = new CollectionsListFragment();
         FragmentManager fragmentManager = getFragmentManager();
         fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).commit();
-
+*/
     }
 
     @Override
@@ -147,8 +179,8 @@ public class MainActivity extends AppCompatActivity {
         }
 
         @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                                 Bundle savedInstanceState) {
+        public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
             View rootView = inflater.inflate(R.layout.collections_list, container, false);
             return rootView;
         }
