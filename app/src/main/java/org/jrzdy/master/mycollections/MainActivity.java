@@ -28,7 +28,6 @@ public class MainActivity extends AppCompatActivity {
     private ListView mDrawerList;
     private ActionBarDrawerToggle mDrawerToggle;
     public static AlmacenColecciones almacenColecciones=new AlmacenColecciones();
-    public static AlmacenArticulos almacenArticulos=new AlmacenArticulos();
     private RecyclerView recyclerView;
     private RecyclerView.LayoutManager layoutManager;
     private AdaptadormC adaptadormC;

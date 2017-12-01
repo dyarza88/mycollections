@@ -1,4 +1,4 @@
-package org.android.master.mycollections;
+package org.jrzdy.master.mycollections;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import org.jrzdy.master.mycollections.R;
 
 /**
  * Created by esthe on 14/11/2017.
