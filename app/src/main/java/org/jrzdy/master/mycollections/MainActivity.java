@@ -21,6 +21,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import static org.jrzdy.master.mycollections.AlmacenArticulos.v_articulo;
+
 public class MainActivity extends AppCompatActivity {
 
     private String[] mTitles;
@@ -28,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     private ListView mDrawerList;
     private ActionBarDrawerToggle mDrawerToggle;
     public static AlmacenColecciones almacenColecciones=new AlmacenColecciones();
+    public static AlmacenArticulos almacenArticulos=new AlmacenArticulos();
     private RecyclerView recyclerView;
     private RecyclerView.LayoutManager layoutManager;
     private AdaptadormC adaptadormC;
@@ -54,6 +57,9 @@ public class MainActivity extends AppCompatActivity {
                 //i.putExtra("clave",valor);
                 //startActivity(i);
                 Intent i = new Intent(getApplicationContext(), EditCollectionActivity.class);
+                i.putExtra("num_colecc",pos);
+                //i.putIntegerArrayListExtra(v_articulo);
+
                 startActivity(i);
                 Toast.makeText(MainActivity.this, "¡Viva!", Toast.LENGTH_SHORT).show();
             }

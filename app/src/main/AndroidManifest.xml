@@ -29,8 +29,11 @@
         </activity>
         <activity android:name=".NuevoArticulo">
         </activity>
+        <activity android:name=".Editararticulo">
+        </activity>
         <activity android:name=".TablonAnuncios"></activity>
         <activity android:name=".EditarPerfil"></activity>
+
     </application>
 
 </manifest>

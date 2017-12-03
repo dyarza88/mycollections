@@ -18,6 +18,7 @@ public class NewCollectionActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(v.getContext(), ImageSelectActivity.class);
+                i.putExtra("fte",1);
                 startActivity(i);
             }
         });
