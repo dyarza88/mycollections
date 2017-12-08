@@ -28,14 +28,20 @@
                 android:gravity="center_horizontal"
                 android:orientation="vertical">
 
-                <android.support.v7.widget.Toolbar
-                    android:id="@+id/id_Tolb_art_A"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/colorSecondary"
-                    android:minHeight="?attr/actionBarSize"
-                    android:theme="?attr/actionBarTheme"
-                    app:subtitle="@string/img_foto_articulo_A" />
+                    android:orientation="vertical"
+                    android:padding="8dp">
+
+                    <TextView
+                        android:id="@+id/titulocolecceditart"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="cromos"
+                        android:textColor="@android:color/white" />
+                </LinearLayout>
 
                 <Space
                     android:layout_width="match_parent"
@@ -68,11 +74,12 @@
                             android:layout_height="70dp" />
 
                         <android.support.design.widget.FloatingActionButton
-                            android:id="@+id/camara_editar_articulo"
+                            android:id="@+id/camara"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:clickable="true"
+                            android:transitionName ="@string/transition_name_camara"
                             app:backgroundTint="@color/colorSecondary"
                             app:srcCompat="@android:drawable/ic_menu_camera" />
 

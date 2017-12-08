@@ -37,6 +37,7 @@ public class ImageSelectActivity extends AppCompatActivity {
     public  int mi_colec,mi_artic;
     public int[] lista_articulos;
     public int[] lista_colecciones;
+    public int[] lista_perfiles;
     public int puntero_lista;
     public static int pantalla_foto;
 
@@ -73,6 +74,9 @@ public class ImageSelectActivity extends AppCompatActivity {
         lista_colecciones[3]=R.drawable.coins_collection;
         lista_colecciones[4]=R.drawable.coleccion_heman;
         lista_colecciones[5]=R.drawable.shoes_collection;
+        lista_perfiles=new int[2];
+        lista_perfiles[0]=R.drawable.web_cab_circulo;
+        lista_perfiles[1]=R.drawable.coche;
 
         reinicio_editar_articulo=1;
         reinicio_pantalla_nuevo_articulo=1;
@@ -94,24 +98,24 @@ public class ImageSelectActivity extends AppCompatActivity {
         }
 
 
-        FloatingActionButton camera = (FloatingActionButton)findViewById(R.id.camaraselectorimagen);
+        FloatingActionButton camera = (FloatingActionButton)findViewById(R.id.camara);
         camera.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //cambia_foto();
+                cambia_foto(null);
 
             }
         });
         FloatingActionButton galeria = (FloatingActionButton)findViewById(R.id.galeriaselectorimagen);//galeriaselectorimagen
-        camera.setOnClickListener(new View.OnClickListener() {
+        galeria.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //cambia_foto();
+                cambia_foto(null);
 
             }
         });
         FloatingActionButton caballo = (FloatingActionButton)findViewById(R.id.caballoselectorimagen);
-        camera.setOnClickListener(new View.OnClickListener() {
+        caballo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -130,6 +134,11 @@ public class ImageSelectActivity extends AppCompatActivity {
                     imagen.setImageDrawable(mi_drawable);
                     fotonuevoarticulo=R.drawable.web_cab_circulo;
                 }
+                if(pantalla==4){
+                    puntero_lista=0;
+                    pon_caballo_en_perfil();
+                }
+
 
             }
         });
@@ -151,12 +160,27 @@ public class ImageSelectActivity extends AppCompatActivity {
                 puntero_lista=0;
             }
         }
+        if(pantalla==4){
+            if(puntero_lista<lista_perfiles.length-1){
+                puntero_lista++;
+            }else{
+                puntero_lista=0;
+            }
+        }
 
     }
 
     public void cambia_foto(View view){
 
         cambia_ptr();
+
+        //cambia perfil
+        if(pantalla==4){
+            foto_R_drawable_x=lista_perfiles[puntero_lista];
+            mi_drawable = getResources().getDrawable(foto_R_drawable_x);
+            imagen.setImageDrawable(mi_drawable);
+        }
+
         //cambiar foto articulo nuevo
         if(pantalla==3){
             foto_R_drawable_x=lista_articulos[puntero_lista];
@@ -198,6 +222,12 @@ public class ImageSelectActivity extends AppCompatActivity {
         imagen.setImageDrawable(mi_drawable);
         //guardar cambios
         editar_coleccion();
+    }
+
+    public void pon_caballo_en_perfil(){
+        foto_R_drawable_x=R.drawable.web_cab_circulo;
+        mi_drawable = getResources().getDrawable(foto_R_drawable_x);
+        imagen.setImageDrawable(mi_drawable);
     }
 
     public void editar_articulo(){

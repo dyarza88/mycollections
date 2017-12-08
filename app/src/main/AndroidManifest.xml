@@ -18,18 +18,24 @@
         </activity>
         <activity android:name=".LoginActivity"/>
         <activity android:name=".SignUpActivity"/>
-        <activity android:name=".NewCollectionActivity"/>
-        <activity android:name=".ForgotPasswordActivity"/>
-        <activity android:name=".ImageSelectActivity"/>
+        <activity android:name=".NewCollectionActivity"
+            android:label="Añadir Colección"/>
+        <activity android:name=".ForgotPasswordActivity"
+            android:label="Recuperación de contraseña"/>
+        <activity android:name=".ImageSelectActivity"
+            android:label="Seleccionar imagen"/>
         <activity android:name=".MarketActivity">
         </activity>
         <activity android:name=".PublishCollectionActivity">
         </activity>
-        <activity android:name=".EditCollectionActivity">
+        <activity android:name=".EditCollectionActivity"
+            android:label="Editar colección">
         </activity>
-        <activity android:name=".NuevoArticulo">
+        <activity android:name=".NuevoArticulo"
+            android:label="Añadir nuevo artículo">
         </activity>
-        <activity android:name=".Editararticulo">
+        <activity android:name=".Editararticulo"
+            android:label="Editar artículo">
         </activity>
         <activity android:name=".TablonAnuncios"></activity>
         <activity android:name=".EditarPerfil"></activity>

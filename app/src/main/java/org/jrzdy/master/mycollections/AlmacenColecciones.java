@@ -51,5 +51,27 @@ public class AlmacenColecciones implements AlmacenObjetos {
         return porcentaje_completo;
     }
 
+    public Vector<String> getPorcentaje_completo() {
+        return porcentaje_completo;
+    }
 
+    public void setPorcentaje_completo(Vector<String> porcentaje_completo) {
+        this.porcentaje_completo = porcentaje_completo;
+    }
+
+    public Vector<String> getColecciones() {
+        return colecciones;
+    }
+
+    public void setColecciones(Vector<String> colecciones) {
+        this.colecciones = colecciones;
+    }
+
+    public Vector<Integer> getImagcol() {
+        return imagcol;
+    }
+
+    public void setImagcol(Vector<Integer> imagcol) {
+        this.imagcol = imagcol;
+    }
 }

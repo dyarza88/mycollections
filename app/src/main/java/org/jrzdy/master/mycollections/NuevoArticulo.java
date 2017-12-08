@@ -3,6 +3,9 @@ package org.jrzdy.master.mycollections;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.ActivityOptionsCompat;
+import android.support.v4.util.Pair;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -62,13 +65,17 @@ public class NuevoArticulo extends AppCompatActivity {
         pantalla_foto=3;
 
 
-        FloatingActionButton camera = (FloatingActionButton)findViewById(R.id.id_cam_art_A);
+        FloatingActionButton camera = (FloatingActionButton)findViewById(R.id.camara);
         camera.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(v.getContext(), ImageSelectActivity.class);
                 i.putExtra("fte",2);
-                startActivity(i);
+                //startActivity(i);
+                ActivityOptionsCompat options= ActivityOptionsCompat.makeSceneTransitionAnimation(
+                        NuevoArticulo.this,
+                        new Pair<View, String>(v.findViewById(R.id.camara), getString(R.string.transition_name_camara)));
+                ActivityCompat.startActivity(NuevoArticulo.this, i, options.toBundle());
             }
         });
 
@@ -78,6 +85,7 @@ public class NuevoArticulo extends AppCompatActivity {
             public void onClick(View v) {
                 recoger_datos();
                 insertar_articulo();
+                Toast.makeText(NuevoArticulo.this, "Nuevo artículo creado", Toast.LENGTH_SHORT).show();
             }
         });
 

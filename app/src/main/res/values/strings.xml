@@ -81,4 +81,8 @@
     <string name="buscador">buscador</string>
     <string name="publicar">Publicar</string>
     <string name="precio">Precio:</string>
+    <!--
+    transiciones
+    -->
+    <string name="transition_name_camara">transition:IMG</string>
 </resources>

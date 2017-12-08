@@ -4,6 +4,9 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.ActivityOptionsCompat;
+import android.support.v4.util.Pair;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
@@ -12,6 +15,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.Toolbar;
 
 import java.util.Vector;
 
@@ -33,12 +37,14 @@ public class Editararticulo extends AppCompatActivity {
     public int posicion_coleccion;
     public  String nombre_articulo;
     public String precio_articulo;
+    public  String titulocoleccion;
     //public String descripc_articulo //aun no está implementado
     public int foto_articulo;
     public TextView nombre_TV;
     public TextView precio_TV;
     public ImageView foto_IV;
     public EditText descrip_ET;
+    public TextView titulocoleccion_TV;
     //public TextView descripc_articulo_TV;
     public Button btn_guardar;
     public Button btn_borrar;
@@ -53,9 +59,11 @@ public class Editararticulo extends AppCompatActivity {
         nombre_articulo="";
         precio_articulo="";
         foto_articulo=R.drawable.web_cab_circulo;
+        titulocoleccion="";
 
         reinicio_editar_articulo=0;
 
+        titulocoleccion_TV=(TextView) findViewById(R.id.titulocolecceditart);
         nombre_TV=(TextView)findViewById(R.id.nombre_editar_articulo);
         precio_TV=(TextView)findViewById(R.id.precio_editar_articulo);
         foto_IV=(ImageView)findViewById(R.id.imagen_editar_articulo);
@@ -72,9 +80,9 @@ public class Editararticulo extends AppCompatActivity {
         Toast.makeText(this, "articulo "+posicion_articulo, Toast.LENGTH_SHORT).show();
 
         mostrar_datos_iniciales();
-
-
-        FloatingActionButton camera = (FloatingActionButton)findViewById(R.id.camara_editar_articulo);
+        titulocoleccion=MainActivity.almacenColecciones.getColecciones().get(posicion_coleccion);
+        titulocoleccion_TV.setText (titulocoleccion);
+        FloatingActionButton camera = (FloatingActionButton)findViewById(R.id.camara);
         camera.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -83,7 +91,13 @@ public class Editararticulo extends AppCompatActivity {
                 pantalla_foto=2;
                 i.putExtra("mi_colec",posicion_coleccion);
                 i.putExtra("mi_artic",posicion_articulo);
-                startActivity(i);
+                //startActivity(i);
+                ActivityOptionsCompat options= ActivityOptionsCompat.makeSceneTransitionAnimation(
+                        Editararticulo.this,
+                        new Pair<View, String>(v.findViewById(R.id.camara), getString(R.string.transition_name_camara)));
+                ActivityCompat.startActivity(Editararticulo.this, i, options.toBundle());
+
+
                 //startActivityForResult(i,1233);
             }
         });

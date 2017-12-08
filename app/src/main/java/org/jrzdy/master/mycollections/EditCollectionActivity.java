@@ -7,6 +7,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -43,8 +45,9 @@ public class EditCollectionActivity extends AppCompatActivity {
 
         reinicio=0;
 
-        editarbtn=(Button)findViewById(R.id.lapizartbtn);
-        borrarbtn=(Button)findViewById(R.id.papeleraartbtn);
+
+        //editarbtn=(Button)findViewById(R.id.lapizartbtn);
+        //borrarbtn=(Button)findViewById(R.id.papeleraartbtn);
 //
         recyclerView=(RecyclerView)findViewById(R.id.recicladorarticulos);
         //antes
@@ -69,15 +72,6 @@ public class EditCollectionActivity extends AppCompatActivity {
             }
         });
 
-
-        lista=new String[4];
-        lista[0]="R.drawable.web_cab_circulo";
-        lista[1]="R.drawable.cromomessi";
-        lista[2]="R.drawable.reyemerito";
-        lista[3]="R.drawable.dobla";
-        //imagart.setImageResource(R.drawable.web_cab_circulo);
-
-
         FloatingActionButton mas = (FloatingActionButton)findViewById(R.id.masartFBnuevo);
         mas.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -88,36 +82,38 @@ public class EditCollectionActivity extends AppCompatActivity {
             }
         });
 
-
-        editarbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(v.getContext(), NewCollectionActivity.class);
-                startActivity(i);
-            }
-        });
-        borrarbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(EditCollectionActivity.this, "Colección borrada", Toast.LENGTH_SHORT).show();
-                finish();
-            }
-        });
-
-
     }
 
     @Override protected void onResume() {
         super.onResume();
+        ImageSelectActivity.pantalla_foto=1;
         Toast.makeText(this, "onResume EditCollection", Toast.LENGTH_SHORT).show();
         adaptadormA.notifyDataSetChanged();
         if(reinicio==1){
             finish();
             startActivity(getIntent());
         }
+
     }
 
-
+    @Override public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_editar_coleccion, menu);
+        return true;
+    }
+    @Override public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.editarcoleccion) {
+            Intent i = new Intent(getApplicationContext(), NewCollectionActivity.class);
+            startActivity(i);
+            return true;
+        }
+        if (id == R.id.borrarcoleccion) {
+            Toast.makeText(EditCollectionActivity.this, "Colección borrada", Toast.LENGTH_SHORT).show();
+            finish();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
 
     @Override
