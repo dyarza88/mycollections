@@ -1,4 +1,4 @@
-package org.android.master.mycollections;
+package org.jrzdy.master.mycollections;
 
 import android.app.Activity;
 import android.content.Intent;

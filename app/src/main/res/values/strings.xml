@@ -79,4 +79,6 @@
     <string name="buscador">buscador</string>
     <string name="publicar">Publicar</string>
     <string name="precio">Precio:</string>
+    <string name="mis_colecciones">Mis colecciones</string>
+    <string name="publicar">Publicar</string>
 </resources>
