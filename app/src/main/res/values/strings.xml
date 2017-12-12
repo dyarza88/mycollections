@@ -80,9 +80,14 @@
     <string name="validation5">Introduce una dirección de email correcta.</string>
     <string name="buscador">buscador</string>
     <string name="publicar">Publicar</string>
-    <string name="precio">Precio:</string>
-    <!--
-    transiciones
-    -->
+    <string name="precio">Precio:</string>  
+    <string name="mis_colecciones">Mis colecciones</string>
+    <string name="title_activity_splash">SplashActivity</string>
+    <string name="title_main">Mis Colecciones</string>
+    <string name="title_market">Mercado</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+  
     <string name="transition_name_camara">transition:IMG</string>
+
 </resources>

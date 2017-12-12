@@ -90,6 +90,11 @@ public class MarketActivity extends AppCompatActivity implements SearchView.OnQu
         startActivity(new Intent(this, PublishCollectionActivity.class));
     }
 
+    public void misColecciones(MenuItem item){
+        startActivity(new Intent(this, MainActivity.class));
+        finish();
+    }
+
     public void cargarColecciones() {
         //Llamamos el recycler iniciamos y declaramos la orientacion
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false));
