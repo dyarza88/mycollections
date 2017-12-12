@@ -1,8 +1,13 @@
 package org.jrzdy.master.mycollections;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.ActivityOptionsCompat;
+import android.support.v4.util.Pair;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -17,6 +22,7 @@ public class EditarPerfil extends Activity {
     Button btnVolver, btnGuardar;
     EditText campoNombre, campoTelefono, campoCorreo, campoLocalidad;
     TextView tvInfoNombre, tvInfoTelefono, tvInfoCorreo, tvInfoLocalidad;
+    public Context micontexto;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -34,6 +40,8 @@ public class EditarPerfil extends Activity {
         tvInfoTelefono = (TextView)findViewById(R.id.campo_telefono);
         tvInfoCorreo = (TextView)findViewById(R.id.campo_correo);
         tvInfoLocalidad = (TextView)findViewById(R.id.campo_localidad);
+
+        micontexto=getApplicationContext();
 
 
         Bundle bundle = getIntent().getExtras();
@@ -60,5 +68,28 @@ public class EditarPerfil extends Activity {
                 startActivity(volver1);
             }
         });
+
+        FloatingActionButton camera = (FloatingActionButton)findViewById(R.id.camara);
+        camera.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(v.getContext(), ImageSelectActivity.class);
+
+                ActivityOptionsCompat options= ActivityOptionsCompat.makeSceneTransitionAnimation(
+                        EditarPerfil.this,
+                        new Pair<View, String>(v.findViewById(R.id.camara), getString(R.string.transition_name_camara)));
+                ActivityCompat.startActivity(EditarPerfil.this, i, options.toBundle());
+
+                //startActivity(i, ActivityOptions.makeSceneTransitionAnimation( ).toBundle());
+            }
+        });
+
     }
+
+
+    @Override protected void onResume() {
+        super.onResume();
+        ImageSelectActivity.pantalla_foto=4;
+    }
+
 }

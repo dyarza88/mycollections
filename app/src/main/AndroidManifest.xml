@@ -14,18 +14,11 @@
             android:label="@string/title_main"/>
         <activity android:name=".LoginActivity"/>
         <activity android:name=".SignUpActivity"/>
-        <activity android:name=".NewCollectionActivity"/>
-        <activity android:name=".ForgotPasswordActivity"/>
-        <activity android:name=".ImageSelectActivity"/>
         <activity
             android:name=".MarketActivity"
             android:label="@string/title_market"/>
 
         <activity android:name=".PublishCollectionActivity">
-        </activity>
-        <activity android:name=".EditCollectionActivity">
-        </activity>
-        <activity android:name=".NuevoArticulo">
         </activity>
         <activity android:name=".TablonAnuncios"/>
         <activity android:name=".EditarPerfil"/>
@@ -39,6 +32,22 @@
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
+        </activity>
+
+        <activity android:name=".NewCollectionActivity"
+            android:label="Añadir Colección"/>
+        <activity android:name=".ForgotPasswordActivity"
+            android:label="Recuperación de contraseña"/>
+        <activity android:name=".ImageSelectActivity"
+            android:label="Seleccionar imagen"/>
+        <activity android:name=".EditCollectionActivity"
+            android:label="Editar colección">
+        </activity>
+        <activity android:name=".NuevoArticulo"
+            android:label="Añadir nuevo artículo">
+        </activity>
+        <activity android:name=".Editararticulo"
+            android:label="Editar artículo">
         </activity>
     </application>
 

@@ -42,6 +42,8 @@
     <string name="txt_hint_clave">Introduce e-mail</string>
     <string name="txt_enviar_btn">Enviar</string>
     <string name="guardar_btn">Guardar</string>
+    <string name="editar_btn">EDITAR</string>
+    <string name="borrar_btn">BORRAR</string>
     <string name="txt_nombre_coleccion">Nombre Colección:</string>
     <string name="txt_hint_nombCol">Nombre Colección</string>
     <string name="txt_elems_totales_undef">Indefinido</string>
@@ -78,13 +80,14 @@
     <string name="validation5">Introduce una dirección de email correcta.</string>
     <string name="buscador">buscador</string>
     <string name="publicar">Publicar</string>
-    <string name="precio">Precio:</string>
+    <string name="precio">Precio:</string>  
     <string name="mis_colecciones">Mis colecciones</string>
-
     <string name="title_activity_splash">SplashActivity</string>
     <string name="title_main">Mis Colecciones</string>
     <string name="title_market">Mercado</string>
-
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
+  
+    <string name="transition_name_camara">transition:IMG</string>
+
 </resources>

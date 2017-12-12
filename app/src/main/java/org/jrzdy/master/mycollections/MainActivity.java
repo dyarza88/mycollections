@@ -1,9 +1,13 @@
 package org.jrzdy.master.mycollections;
 
+import android.app.ActivityOptions;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.app.Fragment;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.ActivityOptionsCompat;
+import android.support.v4.util.Pair;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -20,6 +24,8 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
+
+import static org.jrzdy.master.mycollections.AlmacenArticulos.v_articulo;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -55,7 +61,16 @@ public class MainActivity extends AppCompatActivity {
                 //i.putExtra("clave",valor);
                 //startActivity(i);
                 Intent i = new Intent(getApplicationContext(), EditCollectionActivity.class);
-                startActivity(i);
+                i.putExtra("num_colecc",pos);
+                //i.putIntegerArrayListExtra(v_articulo);
+
+                //startActivity(i);
+
+                ActivityOptionsCompat options= ActivityOptionsCompat.makeSceneTransitionAnimation(
+                        MainActivity.this,
+                        new Pair<View, String>(v, getString(R.string.transition_name_camara)));
+                ActivityCompat.startActivity(MainActivity.this, i, options.toBundle());
+
                 Toast.makeText(MainActivity.this, "¡Viva!", Toast.LENGTH_SHORT).show();
             }
         });
@@ -134,7 +149,7 @@ public class MainActivity extends AppCompatActivity {
             case R.id.menu_new:
                 Toast.makeText(this, "NUEVA COLECCIÓN", Toast.LENGTH_SHORT).show();
                 Intent i = new Intent(this, NewCollectionActivity.class);
-                startActivity(i);
+                startActivity(i,ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
                 return true;
             default:
                 // Handle left menu actions
@@ -152,18 +167,29 @@ public class MainActivity extends AppCompatActivity {
     private void selectItem(int position) {
         Toast.makeText(this, "POS: " + position, Toast.LENGTH_SHORT).show();
         switch(position){
+
+            case 1:
+                startActivity(
+                        new Intent(this, MarketActivity.class),ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
+                break;
             case 3:
                 Intent i =new Intent(this,TablonAnuncios.class);
-                startActivity(i);
+                startActivity(i,ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
                 break;
 
             case 4:
                 startActivity(
-                        new Intent(this, LoginActivity.class));
+                        new Intent(this, LoginActivity.class),ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
                 break;
-            case 1:
-                startActivity(
-                        new Intent(this, MarketActivity.class));
+            case 5:
+                //startActivity(new Intent(this, EditarPerfil.class));
+                Intent intent_editarperfil=new Intent(this, EditarPerfil.class);
+                intent_editarperfil.putExtra("Name","A");
+                intent_editarperfil.putExtra("Email","a@gmail.com");
+                intent_editarperfil.putExtra("Telefono","555555555");
+                intent_editarperfil.putExtra("Direccion","C/ A nº12, 1º A");
+                startActivity(intent_editarperfil, ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
+
                 break;
 
         }

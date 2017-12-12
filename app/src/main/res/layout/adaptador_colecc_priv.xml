@@ -26,9 +26,10 @@
                 android:id="@+id/imagenColeccion"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_margin="4dp"
                 android:adjustViewBounds="true"
                 android:src="@drawable/coleccion_cromos"
-                tools:context="org.jrzdy.master.mycollections.MarketActivity"/>
+                tools:context="org.jrzdy.master.mycollections.MarketActivity" />
 
             <LinearLayout
                 android:layout_width="match_parent"

@@ -28,21 +28,27 @@
                 android:gravity="center_horizontal"
                 android:orientation="vertical">
 
-                <android.support.v7.widget.Toolbar
-                    android:id="@+id/id_Tolb_art_A"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/colorSecondary"
-                    android:minHeight="?attr/actionBarSize"
-                    android:theme="?attr/actionBarTheme"
-                    app:subtitle="@string/img_foto_articulo_A" />
+                    android:orientation="vertical"
+                    android:padding="8dp">
+
+                    <TextView
+                        android:id="@+id/titulocolecceditart"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="cromos"
+                        android:textColor="@android:color/white" />
+                </LinearLayout>
 
                 <Space
                     android:layout_width="match_parent"
                     android:layout_height="20dp" />
 
                 <ImageView
-                    android:id="@+id/id_img_art_A"
+                    android:id="@+id/imagen_editar_articulo"
                     android:layout_width="match_parent"
                     android:layout_height="190dp"
                     android:layout_marginLeft="20dp"
@@ -100,7 +106,7 @@
                 android:textSize="18sp" />
 
             <EditText
-                android:id="@+id/nombre_nuevo_articulo"
+                android:id="@+id/nombre_editar_articulo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -121,7 +127,7 @@
                 android:textSize="14sp" />
 
             <EditText
-                android:id="@+id/precio_nuevo_articulo"
+                android:id="@+id/precio_editar_articulo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -139,7 +145,7 @@
                 android:textColor="@color/colorPrimaryDark" />
 
             <EditText
-                android:id="@+id/descripc_nuevo_articulo"
+                android:id="@+id/descripc_editar_articulo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -153,12 +159,25 @@
                 android:layout_height="5dp" />
 
             <Button
-                android:id="@+id/guardar_nuevo_articulo"
+                android:id="@+id/guardar_editar_articulo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/colorSecondary"
                 android:focusableInTouchMode="true"
                 android:text="@string/guardar_btn"
+                android:textColor="@color/colorPrimaryDark" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="5dp" />
+
+            <Button
+                android:id="@+id/borrar_editar_articulo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorSecondary"
+                android:focusableInTouchMode="true"
+                android:text="@string/borrar_btn"
                 android:textColor="@color/colorPrimaryDark" />
 
 
