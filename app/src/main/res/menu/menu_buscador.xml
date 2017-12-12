@@ -10,8 +10,16 @@
         app:showAsAction="always|collapseActionView"/>
 
     <item
+        android:id="@+id/misColecciones"
+        android:icon="@android:drawable/ic_menu_agenda"
+        android:title="@string/mis_colecciones"
+        app:showAsAction="ifRoom"
+        android:onClick="misColecciones"/>
+
+    <item
         android:id="@+id/nuevaColeccion"
-        android:icon="@android:drawable/btn_plus"
-        android:title="Añadir Colección"
-        android:onClick="nuevaColeccion"/>
+        android:icon="@android:drawable/ic_menu_add"
+        android:title="@string/publicar"
+        android:onClick="nuevaColeccion"
+        app:showAsAction="always"/>
 </menu>
