@@ -30,7 +30,7 @@ import static org.jrzdy.master.mycollections.ImageSelectActivity.pantalla_foto;
 public class NuevoArticulo extends AppCompatActivity {
 
     public static int reinicio_pantalla_nuevo_articulo=R.drawable.web_cab_circulo;
-    public static int fotonuevoarticulo;
+    public static int fotonuevoarticulo=R.drawable.web_cab_circulo;
     public int indice_colecc;
 
     public TextView nombre_TV;
