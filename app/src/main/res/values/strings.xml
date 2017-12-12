@@ -80,5 +80,11 @@
     <string name="publicar">Publicar</string>
     <string name="precio">Precio:</string>
     <string name="mis_colecciones">Mis colecciones</string>
-    <string name="publicar">Publicar</string>
+
+    <string name="title_activity_splash">SplashActivity</string>
+    <string name="title_main">Mis Colecciones</string>
+    <string name="title_market">Mercado</string>
+
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
 </resources>
