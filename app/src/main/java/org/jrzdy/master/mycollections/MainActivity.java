@@ -172,6 +172,12 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(
                         new Intent(this, MarketActivity.class),ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
                 break;
+
+            case 2:
+                Intent intentForo =new Intent(this,ForoActivity.class);
+                startActivity(intentForo,ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
+                break;
+
             case 3:
                 Intent i =new Intent(this,TablonAnuncios.class);
                 startActivity(i,ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
