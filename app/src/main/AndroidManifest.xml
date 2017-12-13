@@ -49,7 +49,7 @@
         <activity android:name=".NuevoArticulo"
             android:label="Añadir nuevo artículo">
         </activity>
-        <activity android:name=".Editararticulo"
+        <activity android:name=".EditArticleActivity"
             android:label="Editar artículo">
         </activity>
         <activity android:name=".ForoActivity"

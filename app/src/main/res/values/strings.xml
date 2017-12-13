@@ -15,7 +15,7 @@
 
     <string name="hello_world">Hola Mundo!</string>
     <string name="action_settings">Opciones</string>
-    <string name="email">Emai</string>
+    <string name="email">Email</string>
     <string name="passowrd">Contraseña</string>
     <string name="login">ACCEDER</string>
     <string name="loginGoogle">ACCEDER USANDO GOOGLE +</string>

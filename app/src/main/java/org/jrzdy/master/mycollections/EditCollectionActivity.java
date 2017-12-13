@@ -5,13 +5,10 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.Toast;
 
 import static org.jrzdy.master.mycollections.MainActivity.almacenArticulos;
@@ -23,14 +20,13 @@ import static org.jrzdy.master.mycollections.MainActivity.almacenArticulos;
 
 public class EditCollectionActivity extends AppCompatActivity {
 
-    public ImageView imagart;
-    public String[]lista;
-    public Button editarbtn;
-    public Button borrarbtn;
+    private static int REQUEST_CODE_1 = 1234;
+    private static String KEY_COLLECTION = "num_colecc";
+    private static String KEY_POSITION = "num_col";
+    private static String KEY_ARTICLE = "num_art";
     private RecyclerView recyclerView;
     private RecyclerView.LayoutManager layoutManager;
     private AdaptadormA adaptadormA;
-    //public static AlmacenArticulos almacenArticulos=new AlmacenArticulos();
     private int coleccion_pasada;
     public static int reinicio;
 
@@ -39,68 +35,78 @@ public class EditCollectionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.editcolectionnuevo);
 
-        Bundle extras=getIntent().getExtras();
-        coleccion_pasada=extras.getInt("num_colecc");
-        //imagart=(ImageView)findViewById(R.id.imagart);
-
-        reinicio=0;
-
-
-        //editarbtn=(Button)findViewById(R.id.lapizartbtn);
-        //borrarbtn=(Button)findViewById(R.id.papeleraartbtn);
-//
-        recyclerView=(RecyclerView)findViewById(R.id.recicladorarticulos);
-        //antes
-        //adaptadormA=new AdaptadormA(this,almacenArticulos.listaObjetos(0),almacenArticulos.listaFotos(0),almacenArticulos.cantidades(0));
-        //ahora
-        adaptadormA=new AdaptadormA(this,almacenArticulos.listaObjetos(coleccion_pasada),almacenArticulos.listaFotos(coleccion_pasada),almacenArticulos.cantidades(coleccion_pasada));
+        Bundle extras = getIntent().getExtras();
+        coleccion_pasada = extras.getInt(KEY_COLLECTION);
+        getSupportActionBar().setTitle(getTitleForCode(coleccion_pasada));
+        recyclerView = (RecyclerView) findViewById(R.id.recicladorarticulos);
+        adaptadormA = new AdaptadormA(this, almacenArticulos.getCollecciones(coleccion_pasada),
+                almacenArticulos.getImagcol(coleccion_pasada),
+                almacenArticulos.getCantidades(coleccion_pasada));
 
         recyclerView.setAdapter(adaptadormA);
-        layoutManager=new GridLayoutManager(this,2);
+        layoutManager = new GridLayoutManager(this, 2);
         recyclerView.setLayoutManager(layoutManager);
         adaptadormA.setOnItemClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int pos=recyclerView.getChildAdapterPosition(v);
-                //String s=almacenArticulos.listaObjetos(0).get(pos);
-                Intent i = new Intent(getApplicationContext(), Editararticulo.class);
-                i.putExtra("num_art",pos);
-                i.putExtra("num_col",coleccion_pasada);
-                //startActivity(i);
-                startActivityForResult(i,1234);
-                Toast.makeText(EditCollectionActivity.this, "¡Viva!", Toast.LENGTH_SHORT).show();
+                int pos = recyclerView.getChildAdapterPosition(v);
+                Intent i = new Intent(getApplicationContext(), EditArticleActivity.class);
+                i.putExtra(KEY_ARTICLE, pos);
+                i.putExtra(KEY_POSITION, coleccion_pasada);
+                startActivityForResult(i, REQUEST_CODE_1);
             }
         });
 
-        FloatingActionButton mas = (FloatingActionButton)findViewById(R.id.masartFBnuevo);
+        FloatingActionButton mas = (FloatingActionButton) findViewById(R.id.masartFBnuevo);
         mas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(v.getContext(), NuevoArticulo.class);
-                i.putExtra("nuevoart_c",coleccion_pasada);
+                i.putExtra(KEY_POSITION, coleccion_pasada);
                 startActivity(i);
             }
         });
 
     }
 
-    @Override protected void onResume() {
-        super.onResume();
-        ImageSelectActivity.pantalla_foto=1;
-        Toast.makeText(this, "onResume EditCollection", Toast.LENGTH_SHORT).show();
-        adaptadormA.notifyDataSetChanged();
-        if(reinicio==1){
-            finish();
-            startActivity(getIntent());
+    private String getTitleForCode(int code) {
+        switch (code) {
+            case 0:
+                return "Cromos";
+            case 1:
+                return "Muñecos Heman";
+            case 2:
+                return "sellos";
+            case 3:
+                return "Zapatos";
+            case 4:
+                return "Monedas";
+            case 5:
+                return "Comics ";
+            default:
+                return "Nueva Coleccion";
         }
-
     }
 
-    @Override public boolean onCreateOptionsMenu(Menu menu) {
+    @Override
+    protected void onResume() {
+        super.onResume();
+        ImageSelectActivity.pantalla_foto = 1;
+        adaptadormA.updateAdaptadormA(this,
+                almacenArticulos.getCollecciones(coleccion_pasada),
+                almacenArticulos.getImagcol(coleccion_pasada),
+                almacenArticulos.getCantidades(coleccion_pasada));
+        adaptadormA.notifyDataSetChanged();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_editar_coleccion, menu);
         return true;
     }
-    @Override public boolean onOptionsItemSelected(MenuItem item) {
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.editarcoleccion) {
             Intent i = new Intent(getApplicationContext(), NewCollectionActivity.class);
@@ -115,19 +121,10 @@ public class EditCollectionActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data){
-        if (requestCode==1234&&requestCode==RESULT_OK){
-            //Hacer algo
-            //imagart=data.getExtras().getInt("numerofoto");
-            //finish();
-            //startActivity(getIntent());
-            //reinicio= data.getExtras().getInt("resultado");
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == REQUEST_CODE_1 && requestCode == RESULT_OK) {
+            //Do nothing since the logic is not implemented yet
         }
     }
-
-
-
-
 }

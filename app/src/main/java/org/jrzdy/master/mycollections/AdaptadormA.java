@@ -37,6 +37,14 @@ public class AdaptadormA extends RecyclerView.Adapter<AdaptadormA.ViewHolder> {
 
     }
 
+    public void updateAdaptadormA(Context context, Vector<String> strings, Vector<Integer> listaFotos,Vector<String> porcentaje_completo) {
+        this.lista=strings;
+        inflador=(LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        this.porcentaje_completo=porcentaje_completo;
+        fotos=listaFotos;
+
+    }
+
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v=inflador.inflate(R.layout.adaptador_colecc_priv,parent,false);
