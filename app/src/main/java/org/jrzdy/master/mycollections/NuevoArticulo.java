@@ -37,10 +37,12 @@ public class NuevoArticulo extends AppCompatActivity {
     public TextView precio_TV;
     public ImageView imagen_IV;
     public Button guardar_btn;
+    public TextView titulocoleccion_TV;
 
     public String nombre;
     public String precio;
     public int foto;
+    public  String titulocoleccion;
 
 
     @Override
@@ -58,8 +60,11 @@ public class NuevoArticulo extends AppCompatActivity {
         precio_TV=(TextView)findViewById(R.id.precio_nuevo_articulo);
         imagen_IV=(ImageView)findViewById(R.id.id_img_art_A);
         guardar_btn=(Button)findViewById(R.id.guardar_nuevo_articulo);
+        titulocoleccion="";
+        titulocoleccion_TV=(TextView) findViewById(R.id.titulocolecceditart);
 
-
+        titulocoleccion=MainActivity.almacenColecciones.getColecciones().get(indice_colecc);
+        titulocoleccion_TV.setText (titulocoleccion);
 
         reinicio_pantalla_nuevo_articulo=0;
         pantalla_foto=3;
