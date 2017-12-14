@@ -79,4 +79,9 @@
     <string name="buscador">buscador</string>
     <string name="publicar">Publicar</string>
     <string name="precio">Precio:</string>
+
+    <string name="name">org.jrzdy.master.mycollections.name</string>
+    <string name="telefono">org.jrzdy.master.mycollections.telefono</string>
+    <string name="Email">org.jrzdy.master.mycollections.Email</string>
+    <string name="direccion">org.jrzdy.master.mycollections.direccion</string>
 </resources>

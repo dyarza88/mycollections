@@ -18,19 +18,27 @@
         </activity>
         <activity android:name="org.jrzdy.master.mycollections.LoginActivity"/>
         <activity android:name="org.jrzdy.master.mycollections.SignUpActivity"/>
-        <activity android:name="org.jrzdy.master.mycollections.NewCollectionActivity"/>
+        <activity android:name="org.jrzdy.master.mycollections.NewCollectionActivity"
+            android:label="Nueva Colección"/>
         <activity android:name="org.jrzdy.master.mycollections.ForgotPasswordActivity"/>
         <activity android:name="org.jrzdy.master.mycollections.ImageSelectActivity"/>
-        <activity android:name="org.jrzdy.master.mycollections.MarketActivity">
+        <activity android:name="org.jrzdy.master.mycollections.MarketActivity"
+            android:label="Mercado">
         </activity>
         <activity android:name="org.jrzdy.master.mycollections.PublishCollectionActivity">
         </activity>
-        <activity android:name="org.jrzdy.master.mycollections.EditCollectionActivity">
+        <activity android:name="org.jrzdy.master.mycollections.EditCollectionActivity"
+            android:label="Editar Colección">
         </activity>
-        <activity android:name="org.jrzdy.master.mycollections.NuevoArticulo">
+        <activity android:name="org.jrzdy.master.mycollections.NuevoArticulo"
+            android:label="Nuevo artículo">
         </activity>
-        <activity android:name="org.jrzdy.master.mycollections.TablonAnuncios"></activity>
-        <activity android:name="org.jrzdy.master.mycollections.EditarPerfil"></activity>
+        <activity android:name="org.jrzdy.master.mycollections.TablonAnuncios"
+            android:label="Tablon de anuncios"/>
+        <activity android:name="org.jrzdy.master.mycollections.EditarPerfil"
+            android:label="Editar Perfil"/>
+        <activity android:name=".DetalleTabAnuncios"
+            android:label="Tablón de anuncios"/>
     </application>
 
 </manifest>
