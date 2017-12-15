@@ -32,7 +32,7 @@ public class TablonAnuncios extends AppCompatActivity {
                 ,"Del viernes 24 al sábado 25 de diciembre 2017"));
         listItems.add(new Entidad(R.drawable.ic_replega,"Replega","Feria Nacional de Coleccionismo General y Popular",
                 "Del viernes 7 al domingo 9 de diciembre 2018"));
-        listItems.add(new Entidad(R.drawable.arco_madrid, "Arco Madrid","Arte contemporáneo, Coleccionismo, Escultura, Pintura",
+        listItems.add(new Entidad(R.drawable.ic_arco_madrid, "Arco Madrid","Arte contemporáneo, Coleccionismo, Escultura, Pintura",
                 "Del miércoles 21 al domingo 25 de febrero 2018"));
 
         return listItems;
