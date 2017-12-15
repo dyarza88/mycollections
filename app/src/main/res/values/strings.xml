@@ -95,6 +95,7 @@
     <string name="dummy_content">DUMMY\nCONTENT</string>
 
     <string name="transition_name_camara">transition:IMG</string>
+    <string name="transition_name_horse">transition:HORSE</string>
     <string name="favs">Añadir a favoritos</string>
     <string name="user_header">Usuario</string>
 

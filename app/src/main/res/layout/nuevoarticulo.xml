@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:focusableInTouchMode="true">
+    >
 
     <ScrollView
         android:id="@+id/id_ScrVw_art_A"
@@ -110,10 +110,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:focusableInTouchMode="true"
+
                 android:hint="@string/hint_nombre_art_A"
                 android:inputType="none|textPersonName"
-                android:selectAllOnFocus="false"
+
                 android:textColorHint="@color/colorSecondary" />
 
             <TextView
@@ -131,7 +131,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:focusableInTouchMode="true"
+
                 android:hint="@string/hint_precio_art_A"
                 android:inputType="none|numberDecimal"
                 android:textColorHint="@color/colorSecondary" />
@@ -149,7 +149,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:focusableInTouchMode="true"
+
                 android:hint="@string/hint_descripc_art_A"
                 android:inputType="none|textMultiLine"
                 android:textColorHint="@color/colorSecondary" />
@@ -163,7 +163,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/colorSecondary"
-                android:focusableInTouchMode="true"
+
                 android:text="@string/guardar_btn"
                 android:textColor="@color/cardview_light_background" />
 
