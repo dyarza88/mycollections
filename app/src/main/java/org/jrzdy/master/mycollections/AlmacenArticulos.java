@@ -1,58 +1,103 @@
 package org.jrzdy.master.mycollections;
 
+import java.util.ArrayList;
 import java.util.Vector;
 
 /**
  * Created by nakis on 30/11/2017.
  */
 
-public class AlmacenArticulos implements AlmacenObjetos {
-    private Vector<String> articulos;
-    private Vector<String> precio;
-    private int[][] imagcol;
+public class AlmacenArticulos {
 
+    public static Vector<Vector<String>> vArticulo;
+    public static Vector<Vector<String>> vPrecio;
+    public static Vector<Vector<Integer>> vImagart;
 
-    public AlmacenArticulos(){
-        articulos=new Vector<String>();
-        precio=new Vector<String>();
-        imagcol=new int[3][1];
-        imagcol[0][0]=  R.drawable.cromomessi;
-        imagcol[1][0]=  R.drawable.reyemerito;
-        imagcol[2][0]=  R.drawable.dobla;
+    //TODO Refactor this class to accomplish good practices
+
+    public AlmacenArticulos() {
+        vArticulo = new Vector<>();
+        vPrecio = new Vector<>();
+        vImagart = new Vector<>();
+
+        nuevoArticulo(4, "Cromo", "3", 0);
+        nuevoArticulo(5, "Muñeco", "12", 1);
+        nuevoArticulo(8, "Sello", "60", 2);
+        nuevoArticulo(1, "Zapato", "29", 3);
+        nuevoArticulo(3, "Moneda", "1", 4);
+        nuevoArticulo(9, "Comic", "2.99", 5);
 
     }
 
-    @Override
-    public Vector<String> listaObjetos(int tipo) {
-        switch (tipo){
-            case 0: articulos.add("Messi");
-            break;
-            case 1:
-            articulos.add("reyemerito");
-            break;
-            default:
-            articulos.add("dobla");
+    private void nuevoArticulo(int numeroArticulos, String nombreColeccion, String precio_elem, int foto) {
+        Vector<String> articulos = new Vector<>();
+        Vector<String> precio = new Vector<>();
+        Vector<Integer> imagart = new Vector<>();
+        int drawable = getDrawableForCode(foto);
+
+        for (int i = 0; i <= numeroArticulos; i++) {
+            articulos.add(nombreColeccion + " " + i);
+            precio.add(precio_elem + "€");
+            imagart.add(drawable);
         }
-        return articulos;
+        vArticulo.add(articulos);
+        vPrecio.add(precio);
+        vImagart.add(imagart);
     }
 
-    @Override
-    public int[] listaFotos(int tipo) {
-        return imagcol[tipo];
+    public Vector<String> getCollecciones(int tipo) {
+        return vArticulo.get(tipo);
     }
 
-    @Override
-    public Vector<String> cantidades(int tipo) {
-        switch (tipo){
+    private int getDrawableForCode(int code) {
+        switch (code) {
             case 0:
-                precio.add("36€");
-                break;
+                return R.drawable.cromomessi;
             case 1:
-                precio.add("7€");
-                break;
+                return R.drawable.heman;
+            case 2:
+                return R.drawable.reyemerito;
+            case 3:
+                return R.drawable.zapato;
+            case 4:
+                return R.drawable.dobla;
+            case 5:
+                return R.drawable.articulo_comic;
             default:
-                precio.add("2500€");
+                return R.drawable.web_cab_circulo;
         }
-        return precio;
     }
+
+    public Vector<Integer> getImagcol(int tipo) {
+        return vImagart.get(tipo);
+    }
+
+    public Vector<String> getCantidades(int tipo) {
+        return vPrecio.get(tipo);
+    }
+
+    public static Vector<Vector<String>> getvArticulo() {
+        return vArticulo;
+    }
+
+    public static void setvArticulo(Vector<Vector<String>> vArticulo) {
+        AlmacenArticulos.vArticulo = vArticulo;
+    }
+
+    public static Vector<Vector<String>> getvPrecio() {
+        return vPrecio;
+    }
+
+    public static void setvPrecio(Vector<Vector<String>> vPrecio) {
+        AlmacenArticulos.vPrecio = vPrecio;
+    }
+
+    public static Vector<Vector<Integer>> getvImagart() {
+        return vImagart;
+    }
+
+    public static void setvImagart(Vector<Vector<Integer>> vImagart) {
+        AlmacenArticulos.vImagart = vImagart;
+    }
+
 }

@@ -1,34 +1,39 @@
 package org.jrzdy.master.mycollections;
 
+import android.app.ActivityOptions;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
-import android.app.Fragment;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.ActivityOptionsCompat;
+import android.support.v4.util.Pair;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
+    //TODO implement dummy user session
+
+    private static String KEY_COLLECTION = "num_colecc";
+    private static String KEY_LOGGED = "logged";
+    private boolean isLoged = false;
     private String[] mTitles;
     private DrawerLayout mDrawerLayout;
     private ListView mDrawerList;
     private ActionBarDrawerToggle mDrawerToggle;
-    public static AlmacenColecciones almacenColecciones=new AlmacenColecciones();
-    public static AlmacenArticulos almacenArticulos=new AlmacenArticulos();
+    public static AlmacenColecciones almacenColecciones = new AlmacenColecciones();
+    public static AlmacenArticulos almacenArticulos = new AlmacenArticulos();
     private RecyclerView recyclerView;
     private RecyclerView.LayoutManager layoutManager;
     private AdaptadormC adaptadormC;
@@ -38,34 +43,39 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            if (extras.containsKey(KEY_LOGGED)) {
+                isLoged = extras.getBoolean(KEY_LOGGED);
+            }
+        }
 
-        recyclerView=(RecyclerView)findViewById(R.id.contenedor_rv_miscoleccsB);
-        adaptadormC=new AdaptadormC(this,almacenColecciones.listaObjetos(1),almacenColecciones.listaFotos(1),almacenColecciones.cantidades(1));
+        recyclerView = (RecyclerView) findViewById(R.id.contenedor_rv_miscoleccsB);
+        adaptadormC = new AdaptadormC(this, almacenColecciones.getColecciones(), almacenColecciones.getImagcol(), almacenColecciones.getPorcentajeCompleto());
         recyclerView.setAdapter(adaptadormC);
-        layoutManager=new LinearLayoutManager(this);
+        layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
 
         adaptadormC.setOnItemClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int pos=recyclerView.getChildAdapterPosition(v);
-                String s=MainActivity.almacenColecciones.listaObjetos(1).get(pos);
-                //Intent i=new Intent(this,EditCollectionActivity.class);
-                //i.putExtra("clave",valor);
-                //startActivity(i);
+                int pos = recyclerView.getChildAdapterPosition(v);
                 Intent i = new Intent(getApplicationContext(), EditCollectionActivity.class);
-                startActivity(i);
-                Toast.makeText(MainActivity.this, "¡Viva!", Toast.LENGTH_SHORT).show();
+                i.putExtra(KEY_COLLECTION, pos);
+                ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation(
+                        MainActivity.this,
+                        new Pair<View, String>(v, getString(R.string.transition_name_camara)));
+                ActivityCompat.startActivity(MainActivity.this, i, options.toBundle());
             }
         });
 
-
-
         mTitles = getResources().getStringArray(R.array.menu_array);
+        if (isLoged) {
+            mTitles[4] = "Configuracion";
+        }
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mDrawerList = (ListView) findViewById(R.id.left_drawer);
-
         mDrawerLayout.setDrawerShadow(R.drawable.drawer_shadow, GravityCompat.START);
 
         // Set the adapter for the list view
@@ -73,7 +83,6 @@ public class MainActivity extends AppCompatActivity {
                 R.layout.drawer_list_item, mTitles));
         // Set the list's click listener
         mDrawerList.setOnItemClickListener(new DrawerItemClickListener());
-
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mDrawerToggle = new ActionBarDrawerToggle(
                 this,
@@ -96,16 +105,8 @@ public class MainActivity extends AppCompatActivity {
 
         // Set the drawer toggle as the DrawerListener
         mDrawerLayout.setDrawerListener(mDrawerToggle);
-
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
-
-/*
-        // Load the main view
-        Fragment fragment = new CollectionsListFragment();
-        FragmentManager fragmentManager = getFragmentManager();
-        fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).commit();
-*/
     }
 
     @Override
@@ -132,9 +133,8 @@ public class MainActivity extends AppCompatActivity {
 
         switch (item.getItemId()) {
             case R.id.menu_new:
-                Toast.makeText(this, "NUEVA COLECCIÓN", Toast.LENGTH_SHORT).show();
                 Intent i = new Intent(this, NewCollectionActivity.class);
-                startActivity(i);
+                startActivity(i, ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
                 return true;
             default:
                 // Handle left menu actions
@@ -150,22 +150,36 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void selectItem(int position) {
-        Toast.makeText(this, "POS: " + position, Toast.LENGTH_SHORT).show();
-        switch(position){
+        switch (position) {
+
+            case 1:
+                startActivity(
+                        new Intent(this, MarketActivity.class), ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
+                break;
+
+            case 2:
+                Intent intentForo = new Intent(this, ForoActivity.class);
+                startActivity(intentForo, ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
+                break;
+
             case 3:
-                Intent i =new Intent(this,TablonAnuncios.class);
-                startActivity(i);
+                Intent i = new Intent(this, TablonAnuncios.class);
+                startActivity(i, ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
                 break;
 
             case 4:
-                startActivity(
-                        new Intent(this, LoginActivity.class));
+                if (isLoged) {
+                    Intent intent_editarperfil = new Intent(this, EditarPerfil.class);
+                    intent_editarperfil.putExtra("Name", "A");
+                    intent_editarperfil.putExtra("Email", "a@gmail.com");
+                    intent_editarperfil.putExtra("Telefono", "555555555");
+                    intent_editarperfil.putExtra("Direccion", "C/ A nº12, 1º A");
+                    startActivity(intent_editarperfil, ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
+                } else {
+                    startActivity(
+                            new Intent(this, LoginActivity.class), ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
+                }
                 break;
-            case 1:
-                startActivity(
-                        new Intent(this, MarketActivity.class));
-                break;
-
         }
     }
 
@@ -175,19 +189,4 @@ public class MainActivity extends AppCompatActivity {
         inflater.inflate(R.menu.menu, menu);
         return super.onCreateOptionsMenu(menu);
     }
-
-    public static class CollectionsListFragment extends Fragment {
-
-        public CollectionsListFragment() {
-            // Empty constructor required for fragment subclasses
-        }
-
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
-            View rootView = inflater.inflate(R.layout.collections_list, container, false);
-            return rootView;
-        }
-    }
-
 }

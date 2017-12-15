@@ -1,5 +1,9 @@
 package org.jrzdy.master.mycollections;
 
+/**
+ * Created by nakis on 01/12/2017.
+ */
+
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -14,18 +18,24 @@ import java.util.Vector;
  * Created by nakis on 30/11/2017.
  */
 
-public class AdaptadormC extends RecyclerView.Adapter<AdaptadormC.ViewHolder> {
+public class AdaptadormA extends RecyclerView.Adapter<AdaptadormA.ViewHolder> {
 
     private LayoutInflater inflador;
     private Vector<String> lista;
     private Vector<String> porcentaje_completo;
     private Vector<Integer> fotos;
-    int coloOart;
-
 
     protected View.OnClickListener onClickListener;
 
-    public AdaptadormC(Context context, Vector<String> strings, Vector<Integer> listaFotos,Vector<String> porcentaje_completo) {
+    public AdaptadormA(Context context, Vector<String> strings, Vector<Integer> listaFotos,Vector<String> porcentaje_completo) {
+        this.lista=strings;
+        inflador=(LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        this.porcentaje_completo=porcentaje_completo;
+        fotos=listaFotos;
+
+    }
+
+    public void updateAdaptadormA(Context context, Vector<String> strings, Vector<Integer> listaFotos,Vector<String> porcentaje_completo) {
         this.lista=strings;
         inflador=(LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         this.porcentaje_completo=porcentaje_completo;
@@ -41,17 +51,19 @@ public class AdaptadormC extends RecyclerView.Adapter<AdaptadormC.ViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
-
+    public void onBindViewHolder(AdaptadormA.ViewHolder holder, int position) {
         holder.titulo.setText(lista.get(position));
         holder.icon.setImageResource(fotos.get(position));
-        holder.subtitulo.setText(porcentaje_completo.get(position));//hacer otra lógica al respecto
+        holder.subtitulo.setText(porcentaje_completo.get(position));
     }
+
+
 
     @Override
     public int getItemCount() {
         return lista.size();
     }
+
 
     public class ViewHolder extends RecyclerView.ViewHolder{
         public TextView titulo,subtitulo;

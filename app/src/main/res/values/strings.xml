@@ -5,8 +5,7 @@
         <item>Mercado</item>
         <item>Foro</item>
         <item>Tablón de anuncios</item>
-        <item>Perfíl de usuario</item>
-        <item>Configuración</item>
+        <item>Acceder</item>
     </string-array>
     <string name="drawer_open">Open navigation drawer</string>
     <string name="drawer_close">Close navigation drawer</string>
@@ -15,7 +14,7 @@
 
     <string name="hello_world">Hola Mundo!</string>
     <string name="action_settings">Opciones</string>
-    <string name="email">Emai</string>
+    <string name="email">Email</string>
     <string name="passowrd">Contraseña</string>
     <string name="login">ACCEDER</string>
     <string name="loginGoogle">ACCEDER USANDO GOOGLE +</string>
@@ -42,6 +41,8 @@
     <string name="txt_hint_clave">Introduce e-mail</string>
     <string name="txt_enviar_btn">Enviar</string>
     <string name="guardar_btn">Guardar</string>
+    <string name="editar_btn">EDITAR</string>
+    <string name="borrar_btn">BORRAR</string>
     <string name="txt_nombre_coleccion">Nombre Colección:</string>
     <string name="txt_hint_nombCol">Nombre Colección</string>
     <string name="txt_elems_totales_undef">Indefinido</string>
@@ -84,4 +85,16 @@
     <string name="telefono">org.jrzdy.master.mycollections.telefono</string>
     <string name="Email">org.jrzdy.master.mycollections.Email</string>
     <string name="direccion">org.jrzdy.master.mycollections.direccion</string>
+
+    <string name="mis_colecciones">Mis colecciones</string>
+    <string name="title_activity_splash">SplashActivity</string>
+    <string name="title_main">Mis Colecciones</string>
+    <string name="title_market">Mercado</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+
+    <string name="transition_name_camara">transition:IMG</string>
+    <string name="favs">Añadir a favoritos</string>
+    <string name="user_header">Usuario</string>
+
 </resources>
