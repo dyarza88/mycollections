@@ -141,12 +141,8 @@ public class EditArticleActivity extends AppCompatActivity {
         fotoArticulo = imagart.get(posicionArticulo);
 
         try {
-            if (nombreTV.getText().equals("")) {
-                nombreTV.setText(nombreArticulo);
-            }
-            if (precioTV.getText().equals("")) {
-                precioTV.setText(precioArticulo);
-            }
+            nombreTV.setText(nombreArticulo);
+            precioTV.setText(precioArticulo);
             fotoIV.setImageResource(fotoArticulo);
         } catch (Exception e) {
             Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
@@ -200,7 +196,7 @@ public class EditArticleActivity extends AppCompatActivity {
             imagart.add(j, miv_imagart.get(posicionColeccion).get(j));
         }
 
-        if (articulos.size() < 1) {
+        if (articulos.size() > 1) {
             articulos.remove(posicionArticulo);
             precio.remove(posicionArticulo);
             imagart.remove(posicionArticulo);

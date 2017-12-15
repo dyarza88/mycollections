@@ -6,6 +6,9 @@ import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.ActivityOptionsCompat;
+import android.support.v4.util.Pair;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
@@ -77,7 +80,10 @@ public class EditCollectionActivity extends AppCompatActivity {
                 Intent i = new Intent(getApplicationContext(), EditArticleActivity.class);
                 i.putExtra(KEY_ARTICLE, pos);
                 i.putExtra(KEY_POSITION, coleccion_pasada);
-                startActivity(i);
+                ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation(
+                        EditCollectionActivity.this,
+                        new Pair<View, String>(v, getString(R.string.transition_name_horse)));
+                ActivityCompat.startActivity(EditCollectionActivity.this, i, options.toBundle());
             }
         });
 
@@ -87,7 +93,10 @@ public class EditCollectionActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent(v.getContext(), NuevoArticuloActivity.class);
                 i.putExtra(KEY_POSITION, coleccion_pasada);
-                startActivity(i);
+                ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation(
+                        EditCollectionActivity.this,
+                        new Pair<View, String>(v, getString(R.string.transition_name_horse)));
+                ActivityCompat.startActivity(EditCollectionActivity.this, i, options.toBundle());
             }
         });
 
