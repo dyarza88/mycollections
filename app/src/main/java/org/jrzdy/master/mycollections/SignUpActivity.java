@@ -1,10 +1,8 @@
 package org.jrzdy.master.mycollections;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -13,36 +11,13 @@ import java.util.regex.Pattern;
 
 public class SignUpActivity extends AppCompatActivity {
 
-    Button signUpBtn;
-    EditText fullName, userEmailId, mobileNumber, location, password, confirmPassword;
-
-
     public static final String regEx = "\\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}\\b";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
-        signUpBtn = (Button)findViewById(R.id.signUpBtn);
-        fullName = (EditText)findViewById(R.id.fullName);
-        userEmailId = (EditText)findViewById(R.id.userEmailId);
-        mobileNumber = (EditText)findViewById(R.id.mobileNumber);
-        location = (EditText)findViewById(R.id.location);
-        signUpBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(SignUpActivity.this,EditarPerfil.class);
-                intent.putExtra("Name",fullName.getText().toString());
-                intent.putExtra("Email",userEmailId.getText().toString());
-                intent.putExtra("Telefono",mobileNumber.getText().toString());
-                intent.putExtra("Direccion",location.getText().toString());
-                startActivity(intent);
-
-            }
-            });
-        }
-
-
+    }
 
     protected void loginAction(View view) {
         finish();
@@ -84,11 +59,11 @@ public class SignUpActivity extends AppCompatActivity {
 
             Toast.makeText(this, s2, Toast.LENGTH_LONG).show();
 
-        } else if(!password1.equals(password2)){
+        } else if (!password1.equals(password2)) {
 
             Toast.makeText(this, s3, Toast.LENGTH_LONG).show();
 
-        } else{
+        } else {
             finish();
         }
     }
