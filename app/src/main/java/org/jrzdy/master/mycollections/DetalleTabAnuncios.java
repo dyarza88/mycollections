@@ -5,14 +5,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-/**
- * Created by esthe on 30/11/2017.
- */
+
 
 public class DetalleTabAnuncios extends AppCompatActivity {
 
     private Entidad Item;
-    private TextView tvTitulo, tvDescripcion, tvFecha;
+    private TextView tvTitulo, tvDescripcion, tvFecha, tvDescDetallada;
     private ImageView imgFoto;
 
     @Override
@@ -26,10 +24,13 @@ public class DetalleTabAnuncios extends AppCompatActivity {
         tvDescripcion = (TextView)findViewById(R.id.tvDescripcion);
         tvFecha = (TextView)findViewById(R.id.tvFecha);
         imgFoto = (ImageView)findViewById(R.id.imgFoto);
+        tvDescDetallada = (TextView)findViewById(R.id.tvDescDetallada);
 
         tvTitulo.setText(Item.getTitulo());
         imgFoto.setImageResource(Item.getImgFoto());
         tvDescripcion.setText(Item.getContenido());
         tvFecha.setText(Item.getFecha());
+        tvDescDetallada.setText(Item.getDescripcion());
     }
 }
+

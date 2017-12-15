@@ -31,6 +31,10 @@
             android:name=".TablonAnuncios"
             android:label="Tablon de anuncios"/>
         <activity
+            android:name=".DetalleTabAnuncios"
+            android:label="Tablón de Anuncios"/>
+
+        <activity
             android:name=".EditarPerfil"
             android:label="Editar Perfil"/>
         <activity
@@ -66,9 +70,7 @@
         <activity
             android:name=".ForoActivity"
             android:label="Foro"/>
-
-        <activity android:name=".DetalleTabAnuncios"
-            android:label="Tablón de anuncios"/>
+        
 
     </application>
 
