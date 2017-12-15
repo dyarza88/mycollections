@@ -11,6 +11,7 @@
     <string name="drawer_close">Close navigation drawer</string>
 
     <string name="menu_nueva_coleccion">Nueva colección</string>
+    <string name="menu_share">Compartir</string>
 
     <string name="hello_world">Hola Mundo!</string>
     <string name="action_settings">Opciones</string>
@@ -79,14 +80,20 @@
     <string name="validation5">Introduce una dirección de email correcta.</string>
     <string name="buscador">buscador</string>
     <string name="publicar">Publicar</string>
-    <string name="precio">Precio:</string>  
+    <string name="precio">Precio:</string>
+
+    <string name="name">org.jrzdy.master.mycollections.name</string>
+    <string name="telefono">org.jrzdy.master.mycollections.telefono</string>
+    <string name="Email">org.jrzdy.master.mycollections.Email</string>
+    <string name="direccion">org.jrzdy.master.mycollections.direccion</string>
+
     <string name="mis_colecciones">Mis colecciones</string>
     <string name="title_activity_splash">SplashActivity</string>
     <string name="title_main">Mis Colecciones</string>
     <string name="title_market">Mercado</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
-  
+
     <string name="transition_name_camara">transition:IMG</string>
     <string name="favs">Añadir a favoritos</string>
     <string name="user_header">Usuario</string>
