@@ -19,23 +19,23 @@ public class SignUpActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sign_up);
     }
 
-    protected void loginAction(View view) {
+    public void loginAction(View view) {
         finish();
     }
 
-    protected void loginGoogleAction(View view) {
+    public void loginGoogleAction(View view) {
         String s = getString(R.string.googleAccess);
         Toast.makeText(this, s, Toast.LENGTH_LONG).show();
     }
 
-    protected void conditionAction(View view) {
+    public void conditionAction(View view) {
         String s = getString(R.string.lie);
 
         findViewById(R.id.signUpBtn).setEnabled(!findViewById(R.id.signUpBtn).isEnabled());
         Toast.makeText(this, s, Toast.LENGTH_LONG).show();
     }
 
-    protected void signupAction(View view) {
+    public void signupAction(View view) {
         validateForm();
     }
 

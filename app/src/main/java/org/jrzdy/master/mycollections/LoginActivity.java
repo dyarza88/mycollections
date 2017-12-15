@@ -34,26 +34,26 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
-    protected void loginAction(View view) {
+    public void loginAction(View view) {
         validateForm();
     }
 
-    protected void loginGoogleAction(View view) {
+    public void loginGoogleAction(View view) {
         String s = getString(R.string.validation1);
         Toast.makeText(this, s, Toast.LENGTH_LONG).show();
     }
 
-    protected void forgetPasswordAction(View view) {
+    public void forgetPasswordAction(View view) {
         String s = getString(R.string.forgotPAssword);
         Toast.makeText(this, s, Toast.LENGTH_LONG).show();
     }
 
-    protected void signupAction(View view) {
+    public void signupAction(View view) {
         Intent intent = new Intent(this, SignUpActivity.class);
         startActivity(intent);
     }
 
-    protected void showPasswordAction(View v) {
+    public void showPasswordAction(View v) {
         EditText contraseña = (EditText) findViewById(R.id.login_password);
         CheckBox mostrar = (CheckBox) findViewById(R.id.show_hide_password);
 
@@ -65,7 +65,7 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
-    protected void validateForm() {
+    public void validateForm() {
         String email = ((EditText) findViewById(R.id.login_emailid)).getText().toString();
         String password = ((EditText) findViewById(R.id.login_password)).getText().toString();
         String s1 = getString(R.string.validation4);
