@@ -36,7 +36,9 @@ public class RateMyApp {
     public void app_launched() {
         SharedPreferences prefs = callerActivity.getSharedPreferences(
                 "apprater", 0);
-        if (prefs.getBoolean("dontshowagain", false)) { return; }
+        if (prefs.getBoolean("dontshowagain", false)) {
+            return;
+        }
         SharedPreferences.Editor editor = prefs.edit();
         launch_count = prefs.getLong("launch_count", 0) + 1;
         editor.putLong("launch_count", launch_count);
@@ -50,19 +52,18 @@ public class RateMyApp {
                 date_firstLaunch + (DAYS_UNTIL_PROMPT * 24 * 60 * 60 * 1000);
         if ((exceedsSpecifiedLaunches || exceedsDaysSinceFirstLaunch) &&
                 !DAYS_AND_LAUNCHES) {
-            editor.putLong("launch_count",0);
+            editor.putLong("launch_count", 0);
             showRateDialog(editor);
-        }
-        else if (exceedsSpecifiedLaunches && exceedsDaysSinceFirstLaunch &&
+        } else if (exceedsSpecifiedLaunches && exceedsDaysSinceFirstLaunch &&
                 DAYS_AND_LAUNCHES) {
-            editor.putLong("launch_count",0);
+            editor.putLong("launch_count", 0);
             showRateDialog(editor);
         }
         editor.apply();
     }
 
     public void showRateDialog(final SharedPreferences.Editor editor) {
-        if(APP_PACKAGENAME.equals("")) return;
+        if (APP_PACKAGENAME.equals("")) return;
         AlertDialog.Builder builder;
         LayoutInflater inflater = callerActivity.getLayoutInflater();
         View layout = inflater.inflate(R.layout.dialog_ratemyapp, null);
@@ -101,7 +102,8 @@ public class RateMyApp {
             }
         });
         laterButton.setOnClickListener(new View.OnClickListener() {
-            @Override public void onClick(View v) {
+            @Override
+            public void onClick(View v) {
                 if (editor != null) {
                     editor.putLong("launch_count", 0);
                     editor.apply();

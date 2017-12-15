@@ -86,7 +86,7 @@
         android:onClick="publishCollection"
         android:padding="3dp"
         android:text="@string/publicar"
-        android:textColor="@color/colorPrimaryDark"
+        android:textColor="@color/cardview_light_background"
         android:textSize="17sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"

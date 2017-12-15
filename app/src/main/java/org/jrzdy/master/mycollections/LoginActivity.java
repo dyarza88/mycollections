@@ -58,8 +58,7 @@ public class LoginActivity extends AppCompatActivity {
         CheckBox mostrar = (CheckBox) findViewById(R.id.show_hide_password);
 
         if (mostrar.isChecked()) {
-            contraseña.setInputType(InputType.TYPE_CLASS_TEXT |
-                    InputType.TYPE_TEXT_VARIATION_NORMAL);
+            contraseña.setInputType(InputType.TYPE_CLASS_TEXT);
         } else {
             contraseña.setInputType(InputType.TYPE_CLASS_TEXT |
                     InputType.TYPE_TEXT_VARIATION_PASSWORD);

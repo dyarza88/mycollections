@@ -153,7 +153,7 @@
                 android:background="@color/colorSecondary"
                 android:focusableInTouchMode="true"
                 android:text="@string/guardar_btn"
-                android:textColor="@color/colorPrimaryDark" />
+                android:textColor="@color/cardview_light_background" />
             <Space
                 android:layout_width="match_parent"
                 android:layout_height="5dp" />
@@ -165,7 +165,7 @@
                 android:background="@color/colorSecondary"
                 android:focusableInTouchMode="true"
                 android:text="@string/borrar_btn"
-                android:textColor="@color/colorPrimaryDark" />
+                android:textColor="@color/cardview_light_background" />
         </LinearLayout>
     </ScrollView>
 

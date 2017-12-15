@@ -85,7 +85,7 @@
         android:background="@color/colorSecondary"
         android:onClick="enviarNuevaClave_porolvido"
         android:text="@string/txt_enviar_btn"
-        android:textColor="@color/colorPrimaryDark"
+        android:textColor="@color/cardview_light_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/editText_email"
         app:layout_constraintStart_toStartOf="@+id/editText_email"

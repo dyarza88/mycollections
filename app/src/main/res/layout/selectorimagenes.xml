@@ -90,7 +90,7 @@
         android:background="@color/colorSecondary"
         android:focusableInTouchMode="true"
         android:text="@string/guardar_btn"
-        android:textColor="@color/colorPrimaryDark"
+        android:textColor="@color/cardview_light_background"
         android:onClick="closeActivity"
         app:layout_constraintBottom_toBottomOf="parent"/>
 

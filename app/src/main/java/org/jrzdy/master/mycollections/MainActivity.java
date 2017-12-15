@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
     private static String KEY_COLLECTION = "num_colecc";
     private static String KEY_LOGGED = "logged";
+    private boolean dontRate = false;
     private boolean isLoged = false;
     private String[] mTitles;
     private DrawerLayout mDrawerLayout;
@@ -148,8 +149,10 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
 
-        new RateMyApp(this).app_launched();
-
+        if(!isLoged && !dontRate){
+            new RateMyApp(this).app_launched();
+            dontRate = true;
+        }
     }
 
     @Override

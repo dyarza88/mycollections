@@ -293,7 +293,7 @@
                         android:layout_marginBottom="4dp"
                         android:background="@color/colorSecondary"
                         android:text="GUARDAR"
-                        android:textColor="@color/colorPrimaryDark"
+                        android:textColor="@color/cardview_light_background"
                         android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -311,7 +311,7 @@
                         android:layout_height="wrap_content"
                         android:background="@color/colorSecondary"
                         android:text="VOLVER"
-                        android:textColor="@color/colorPrimaryDark"
+                        android:textColor="@color/cardview_light_background"
                         android:textStyle="bold" />
                 </TableRow>
 
@@ -321,48 +321,6 @@
         </LinearLayout>
 
     </ScrollView>
-    <!-- Bottom Bar
-    <LinearLayout
-        android:id="@+id/bottom_bar"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
-        android:paddingLeft="0dp"
-        android:paddingRight="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <Button
-            android:id="@+id/btnGuardar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="30dp"
-            android:background="@color/colorSecondary"
-            android:text="GUARDAR"
-            android:textColor="@color/colorPrimaryDark"
-            android:textStyle="bold" />
-
-        <Button
-            android:id="@+id/btnVolver"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_marginRight="40dp"
-            android:background="@color/colorAccent"
-            android:text="VOLVER"
-            android:textStyle="bold" />
-    </LinearLayout>
-    -->
-
-
-
-
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/camara"
         android:layout_width="wrap_content"

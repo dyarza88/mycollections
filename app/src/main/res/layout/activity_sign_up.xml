@@ -165,7 +165,7 @@
         android:onClick="signupAction"
         android:padding="3dp"
         android:text="@string/signUp"
-        android:textColor="@color/colorPrimaryDark"
+        android:textColor="@color/cardview_light_background"
         android:textSize="17sp"
         android:textStyle="bold" />
 
@@ -178,7 +178,7 @@
         android:onClick="loginGoogleAction"
         android:padding="3dp"
         android:text="@string/signUpGoogle"
-        android:textColor="@color/colorPrimaryDark"
+        android:textColor="@color/cardview_light_background"
         android:textSize="17sp"
         android:textStyle="bold" />
 
