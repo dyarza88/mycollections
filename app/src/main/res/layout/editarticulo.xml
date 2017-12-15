@@ -163,7 +163,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/colorSecondary"
-                android:focusableInTouchMode="true"
                 android:text="@string/guardar_btn"
                 android:textColor="@color/cardview_light_background" />
 
@@ -176,7 +175,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/colorSecondary"
-                android:focusableInTouchMode="true"
                 android:text="@string/borrar_btn"
                 android:textColor="@color/cardview_light_background" />
 

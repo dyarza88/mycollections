@@ -44,8 +44,6 @@ public class NuevoArticuloActivity extends AppCompatActivity {
     public int foto;
     public String titulocoleccion;
 
-    //TODO refactor this code and fix the restart functionallity
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

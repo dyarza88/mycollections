@@ -149,7 +149,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-
                 android:hint="@string/hint_descripc_art_A"
                 android:inputType="none|textMultiLine"
                 android:textColorHint="@color/colorSecondary" />
@@ -163,7 +162,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/colorSecondary"
-
                 android:text="@string/guardar_btn"
                 android:textColor="@color/cardview_light_background" />
 

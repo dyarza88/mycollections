@@ -78,7 +78,6 @@ public class EditArticleActivity extends AppCompatActivity {
             public void onClick(View v) {
                 editarArticulo();
                 finish();
-                return;
             }
         });
 
@@ -158,9 +157,7 @@ public class EditArticleActivity extends AppCompatActivity {
         Vector<Vector<String>> miv_precio = getvPrecio();
         Vector<Vector<Integer>> miv_imagart = getvImagart();
 
-        int j = 0;
-        for (j = 0; j < miv_articulo.get(posicionColeccion).size(); j++) {
-
+        for (int j = 0; j < miv_articulo.get(posicionColeccion).size(); j++) {
             articulos.add(j, miv_articulo.get(posicionColeccion).get(j));
             precio.add(j, miv_precio.get(posicionColeccion).get(j));
             imagart.add(j, miv_imagart.get(posicionColeccion).get(j));
@@ -188,8 +185,7 @@ public class EditArticleActivity extends AppCompatActivity {
         Vector<Vector<String>> miv_precio = getvPrecio();
         Vector<Vector<Integer>> miv_imagart = getvImagart();
 
-        int j = 0;
-        for (j = 0; j < miv_articulo.get(posicionColeccion).size(); j++) {
+        for (int j = 0; j < miv_articulo.get(posicionColeccion).size(); j++) {
             //memorizo la fila
             articulos.add(j, miv_articulo.get(posicionColeccion).get(j));
             precio.add(j, miv_precio.get(posicionColeccion).get(j));
