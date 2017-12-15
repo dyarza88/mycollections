@@ -31,7 +31,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:clickable="true"
-                android:onClick="cambia_foto"
+                android:onClick="cambiaFoto"
                 android:transitionName ="@string/transition_name_camara"
                 app:backgroundTint="@color/colorSecondary"
                 app:srcCompat="@android:drawable/ic_menu_camera" />
@@ -80,5 +80,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tableLayout"
         app:srcCompat="@drawable/web_cab_circulo" />
+
+
+    <Button
+        android:id="@+id/guardar_imagen"
+        android:layout_margin="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorSecondary"
+        android:focusableInTouchMode="true"
+        android:text="@string/guardar_btn"
+        android:textColor="@color/colorPrimaryDark"
+        android:onClick="closeActivity"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
 
 </android.support.constraint.ConstraintLayout>

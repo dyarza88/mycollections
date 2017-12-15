@@ -16,6 +16,7 @@ import java.util.regex.Pattern;
 public class LoginActivity extends AppCompatActivity {
 
     public static final String regEx = "\\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}\\b";
+    private static String KEY_LOGGED = "logged";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,7 +85,9 @@ public class LoginActivity extends AppCompatActivity {
             Toast.makeText(this, s2, Toast.LENGTH_LONG).show();
 
         } else {
-            finish();
+            Intent i = new Intent(LoginActivity.this, MainActivity.class);
+            i.putExtra(KEY_LOGGED, true);
+            startActivity(i);
         }
     }
 }

@@ -24,12 +24,18 @@ public class AdaptadormA extends RecyclerView.Adapter<AdaptadormA.ViewHolder> {
     private Vector<String> lista;
     private Vector<String> porcentaje_completo;
     private Vector<Integer> fotos;
-    int coloOart;
-
 
     protected View.OnClickListener onClickListener;
 
     public AdaptadormA(Context context, Vector<String> strings, Vector<Integer> listaFotos,Vector<String> porcentaje_completo) {
+        this.lista=strings;
+        inflador=(LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        this.porcentaje_completo=porcentaje_completo;
+        fotos=listaFotos;
+
+    }
+
+    public void updateAdaptadormA(Context context, Vector<String> strings, Vector<Integer> listaFotos,Vector<String> porcentaje_completo) {
         this.lista=strings;
         inflador=(LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         this.porcentaje_completo=porcentaje_completo;

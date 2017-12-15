@@ -6,12 +6,12 @@
 
     <application
         android:allowBackup="true"
+        android:hardwareAccelerated="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
-        android:hardwareAccelerated="true">
+        android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity"
             android:label="@string/title_main"/>
@@ -37,22 +37,31 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".NewCollectionActivity"
+        <activity
+            android:name=".NewCollectionActivity"
             android:label="Añadir Colección"/>
-        <activity android:name=".ForgotPasswordActivity"
+        <activity
+            android:name=".ForgotPasswordActivity"
             android:label="Recuperación de contraseña"/>
-        <activity android:name=".ImageSelectActivity"
+        <activity
+            android:name=".ImageSelectActivity"
             android:label="Seleccionar imagen"/>
-        <activity android:name=".EditCollectionActivity"
-            android:label="Editar colección">
+        <activity
+            android:name=".EditCollectionActivity"
+            android:label="Coleccion"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen">
         </activity>
-        <activity android:name=".NuevoArticulo"
+        <activity
+            android:name=".NuevoArticuloActivity"
             android:label="Añadir nuevo artículo">
         </activity>
-        <activity android:name=".Editararticulo"
-            android:label="Editar artículo">
+        <activity
+            android:name=".EditArticleActivity"
+            android:label="Editar artículo"
+            >
         </activity>
-        <activity android:name=".ForoActivity"
+        <activity
+            android:name=".ForoActivity"
             android:label="Foro">
         </activity>
     </application>

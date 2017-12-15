@@ -1,21 +1,21 @@
 package org.jrzdy.master.mycollections;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import android.widget.Toast;
-
 import java.util.ArrayList;
 
 public class MarketActivity extends AppCompatActivity implements SearchView.OnQueryTextListener {
 
+    private static String KEY_COLLECTION = "num_colecc";
+    private static String KEY_MARKET = "market";
     ArrayList<Colecciones> listaColecciones;
     RecyclerAdapterr recyclerAdapterr;
     RecyclerView recyclerView;
@@ -58,7 +58,7 @@ public class MarketActivity extends AppCompatActivity implements SearchView.OnQu
     @Override
     public boolean onQueryTextChange(String s) {
         try {
-            ArrayList<Colecciones> listaFiltrada =filter(listaColecciones, s);
+            ArrayList<Colecciones> listaFiltrada = filter(listaColecciones, s);
             recyclerAdapterr.setFilter(listaFiltrada);
 
         } catch (Exception e) {
@@ -85,18 +85,16 @@ public class MarketActivity extends AppCompatActivity implements SearchView.OnQu
         return listaFiltrada;
     }
 
-    public void nuevaColeccion(MenuItem item){
-        //Toast.makeText(getApplicationContext(), "Añadiendo nueva colección...", Toast.LENGTH_LONG).show();
+    public void nuevaColeccion(MenuItem item) {
         startActivity(new Intent(this, PublishCollectionActivity.class));
     }
 
-    public void misColecciones(MenuItem item){
+    public void misColecciones(MenuItem item) {
         startActivity(new Intent(this, MainActivity.class));
         finish();
     }
 
     public void cargarColecciones() {
-        //Llamamos el recycler iniciamos y declaramos la orientacion
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false));
         listaColecciones = new Colecciones().getlistaColecciones();
 
@@ -105,12 +103,19 @@ public class MarketActivity extends AppCompatActivity implements SearchView.OnQu
                 @Override
                 //Obtenemos la posicion
                 public void onItemClick(final int position) {
-                    Toast.makeText(getApplicationContext(), "posiciòn " + position, Toast.LENGTH_LONG).show();
+
+                    Intent i = new Intent(getApplicationContext(), EditCollectionActivity.class);
+                    if (position == 3) {
+                        i.putExtra(KEY_COLLECTION, 5);
+                    } else {
+                        i.putExtra(KEY_COLLECTION, position);
+                    }
+                    //TODO take care into sharing the position parameter as if we use search mode it would not be the same
+                    i.putExtra(KEY_MARKET, true);
+                    startActivity(i);
                 }
             });
-
             recyclerView.setAdapter(recyclerAdapterr);
         }
-
     }
 }
