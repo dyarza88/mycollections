@@ -92,9 +92,9 @@ public class RateMyApp {
                 }
                 Intent intent = new Intent(Intent.ACTION_SEND);
                 intent.setType("text/html");
-                intent.putExtra(Intent.EXTRA_EMAIL, "empresa@gmail.com");
-                intent.putExtra(Intent.EXTRA_SUBJECT, "MasterListas Issue: ");
-                intent.putExtra(Intent.EXTRA_TEXT, "Put inside the issue");
+                intent.putExtra(Intent.EXTRA_EMAIL, "dyarza88@gmail.com");
+                intent.putExtra(Intent.EXTRA_SUBJECT, "MyCollections Issue: ");
+                intent.putExtra(Intent.EXTRA_TEXT, "Tengo un problema con MyCollections...");
                 callerActivity.startActivity(
                         Intent.createChooser(intent, "Send Email"));
                 ratemyappDialog.dismiss();
