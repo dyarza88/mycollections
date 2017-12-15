@@ -13,6 +13,7 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -21,9 +22,11 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-public class MainActivity extends AppCompatActivity {
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
+import com.google.android.gms.ads.MobileAds;
 
-    //TODO implement dummy user session
+public class MainActivity extends AppCompatActivity {
 
     private static String KEY_COLLECTION = "num_colecc";
     private static String KEY_LOGGED = "logged";
@@ -38,10 +41,18 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView.LayoutManager layoutManager;
     private AdaptadormC adaptadormC;
 
+    private InterstitialAd mInterstitialAd;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        MobileAds.initialize(this, "ca-app-pub-2551868595254778~9143474070");
+
+        mInterstitialAd = new InterstitialAd(this);
+        mInterstitialAd.setAdUnitId("ca-app-pub-2551868595254778/9307125608");
+        mInterstitialAd.loadAd(new AdRequest.Builder().build());
 
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
@@ -136,6 +147,13 @@ public class MainActivity extends AppCompatActivity {
 
         switch (item.getItemId()) {
             case R.id.menu_new:
+                // Abre el anuncio
+                if (mInterstitialAd.isLoaded()) {
+                    mInterstitialAd.show();
+                } else {
+                    Log.d("TAG", "El anuncio no está cargado aún");
+                }
+
                 Intent i = new Intent(this, NewCollectionActivity.class);
                 startActivity(i, ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
                 return true;
