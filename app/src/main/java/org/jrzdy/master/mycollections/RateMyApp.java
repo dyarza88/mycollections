@@ -9,6 +9,7 @@ import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 /**
  * Created by Diego on 15/12/2017.
@@ -42,6 +43,12 @@ public class RateMyApp {
         SharedPreferences.Editor editor = prefs.edit();
         launch_count = prefs.getLong("launch_count", 0) + 1;
         editor.putLong("launch_count", launch_count);
+
+        if (launch_count < LAUNCHES_UNTIL_PROMPT) {
+            editor.apply();
+            return;
+        }
+        
         Long date_firstLaunch = prefs.getLong("date_firstlaunch", 0);
         if (date_firstLaunch == 0) {
             date_firstLaunch = System.currentTimeMillis();
@@ -88,6 +95,7 @@ public class RateMyApp {
         cancelButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 if (editor != null) {
+                    editor.putBoolean("dontshowagain", true);
                     editor.putLong("launch_count", 0);
                     editor.apply();
                 }
@@ -105,6 +113,7 @@ public class RateMyApp {
             @Override
             public void onClick(View v) {
                 if (editor != null) {
+                    editor.putBoolean("dontshowagain", true);
                     editor.putLong("launch_count", 0);
                     editor.apply();
                 }
