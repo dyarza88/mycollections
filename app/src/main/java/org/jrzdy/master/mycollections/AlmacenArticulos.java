@@ -37,7 +37,7 @@ public class AlmacenArticulos {
 
         for (int i = 0; i <= numeroArticulos; i++) {
             articulos.add(nombreColeccion + " " + i);
-            precio.add(precio_elem);
+            precio.add(precio_elem + "€");
             imagart.add(drawable);
         }
         vArticulo.add(articulos);

@@ -49,8 +49,6 @@ public class EditArticleActivity extends AppCompatActivity {
     public Button botonGuardar;
     public Button botonBorrar;
 
-    public static int reinicio_editar_articulo;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
