@@ -11,6 +11,7 @@
     <string name="drawer_close">Close navigation drawer</string>
 
     <string name="menu_nueva_coleccion">Nueva colección</string>
+    <string name="menu_share">Compartir</string>
 
     <string name="hello_world">Hola Mundo!</string>
     <string name="action_settings">Opciones</string>

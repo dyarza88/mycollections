@@ -12,6 +12,9 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.TypedValue;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -225,4 +228,31 @@ public class EditCollectionActivity extends AppCompatActivity {
         Intent i = new Intent(EditCollectionActivity.this, NewCollectionActivity.class);
         startActivity(i);
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_share, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.menu_share:
+                compatirTexto("Mira esta colección en la aplicación: http://play.google.com/store/apps/details?id=" + getPackageName());
+                return true;
+            default:
+                // Handle left menu actions
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    void compatirTexto(String texto) {
+        Intent i = new Intent(Intent.ACTION_SEND);
+        i.setType("text/plain");
+        i.putExtra(Intent.EXTRA_TEXT, texto);
+        startActivity(Intent.createChooser(i, "Selecciona aplicación"));
+    }
+
 }
