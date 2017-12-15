@@ -71,6 +71,9 @@ public class MainActivity extends AppCompatActivity {
         });
 
         mTitles = getResources().getStringArray(R.array.menu_array);
+        if (isLoged) {
+            mTitles[4] = "Configuracion";
+        }
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mDrawerList = (ListView) findViewById(R.id.left_drawer);
         mDrawerLayout.setDrawerShadow(R.drawable.drawer_shadow, GravityCompat.START);
@@ -165,17 +168,17 @@ public class MainActivity extends AppCompatActivity {
                 break;
 
             case 4:
-                startActivity(
-                        new Intent(this, LoginActivity.class), ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
-                break;
-            case 5:
-                //startActivity(new Intent(this, EditarPerfil.class));
-                Intent intent_editarperfil = new Intent(this, EditarPerfil.class);
-                intent_editarperfil.putExtra("Name", "A");
-                intent_editarperfil.putExtra("Email", "a@gmail.com");
-                intent_editarperfil.putExtra("Telefono", "555555555");
-                intent_editarperfil.putExtra("Direccion", "C/ A nº12, 1º A");
-                startActivity(intent_editarperfil, ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
+                if (isLoged) {
+                    Intent intent_editarperfil = new Intent(this, EditarPerfil.class);
+                    intent_editarperfil.putExtra("Name", "A");
+                    intent_editarperfil.putExtra("Email", "a@gmail.com");
+                    intent_editarperfil.putExtra("Telefono", "555555555");
+                    intent_editarperfil.putExtra("Direccion", "C/ A nº12, 1º A");
+                    startActivity(intent_editarperfil, ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
+                } else {
+                    startActivity(
+                            new Intent(this, LoginActivity.class), ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
+                }
                 break;
         }
     }

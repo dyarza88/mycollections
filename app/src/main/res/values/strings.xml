@@ -5,8 +5,7 @@
         <item>Mercado</item>
         <item>Foro</item>
         <item>Tablón de anuncios</item>
-        <item>Perfíl de usuario</item>
-        <item>Configuración</item>
+        <item>Acceder</item>
     </string-array>
     <string name="drawer_open">Open navigation drawer</string>
     <string name="drawer_close">Close navigation drawer</string>
@@ -90,5 +89,6 @@
   
     <string name="transition_name_camara">transition:IMG</string>
     <string name="favs">Añadir a favoritos</string>
+    <string name="user_header">Usuario</string>
 
 </resources>

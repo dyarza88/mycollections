@@ -15,16 +15,24 @@
         <activity
             android:name=".MainActivity"
             android:label="@string/title_main"/>
-        <activity android:name=".LoginActivity"/>
-        <activity android:name=".SignUpActivity"/>
+        <activity
+            android:name=".LoginActivity"
+            android:label="Acceder"/>
+        <activity
+            android:name=".SignUpActivity"
+            android:label="Registrarse"/>
         <activity
             android:name=".MarketActivity"
             android:label="@string/title_market"/>
-
-        <activity android:name=".PublishCollectionActivity">
-        </activity>
-        <activity android:name=".TablonAnuncios"/>
-        <activity android:name=".EditarPerfil"/>
+        <activity
+            android:name=".PublishCollectionActivity"
+            android:label="Publicar Colección"/>
+        <activity
+            android:name=".TablonAnuncios"
+            android:label="Tablon de anuncios"/>
+        <activity
+            android:name=".EditarPerfil"
+            android:label="Editar Perfil"/>
         <activity
             android:name=".SplashActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
@@ -49,21 +57,15 @@
         <activity
             android:name=".EditCollectionActivity"
             android:label="Coleccion"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen">
-        </activity>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen"/>
         <activity
             android:name=".NuevoArticuloActivity"
-            android:label="Añadir nuevo artículo">
-        </activity>
+            android:label="Añadir nuevo artículo"/>
         <activity
             android:name=".EditArticleActivity"
-            android:label="Editar artículo"
-            >
-        </activity>
+            android:label="Editar artículo"/>
         <activity
             android:name=".ForoActivity"
-            android:label="Foro">
-        </activity>
+            android:label="Foro"/>
     </application>
-
 </manifest>
