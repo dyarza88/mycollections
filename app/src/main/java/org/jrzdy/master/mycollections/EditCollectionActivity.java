@@ -13,8 +13,6 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.TypedValue;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -98,7 +96,6 @@ public class EditCollectionActivity extends AppCompatActivity {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
 
     private int getDrawableForCode(int code) {
@@ -110,13 +107,13 @@ public class EditCollectionActivity extends AppCompatActivity {
             case 2:
                 return R.drawable.coleccion_sellos;
             case 3:
-                return R.drawable.ic_shoes_collection;
+                return R.drawable.shoes_collection;
             case 4:
-                return R.drawable.ic_coins_collection;
+                return R.drawable.coins_collection;
             case 5:
-                return R.drawable.coleccion_cromos;
+                return R.drawable.coleccion_comics;
             default:
-                return R.drawable.coleccion_cromos;
+                return R.drawable.coleccion_comics;
         }
     }
 
@@ -139,6 +136,25 @@ public class EditCollectionActivity extends AppCompatActivity {
         }
     }
 
+    private String getAutorForCode(int code) {
+        switch (code) {
+            case 0:
+                return "Nuria";
+            case 1:
+                return "Dyarza";
+            case 2:
+                return "Esther";
+            case 3:
+                return "Nuria";
+            case 4:
+                return "Dieyo Garza";
+            case 5:
+                return "Jarucas92 ";
+            default:
+                return "Ziego Yarda";
+        }
+    }
+
     private void initCollapsingToolbar() {
         final CollapsingToolbarLayout collapsingToolbar =
                 (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
@@ -147,7 +163,9 @@ public class EditCollectionActivity extends AppCompatActivity {
         collapsingToolbar.setTitle("");
         titleTextView.setText(getTitleForCode(coleccion_pasada));
         if (fromMarket) {
-            autorTextView.setText("Autor: DYarza");
+            autorTextView.setText(getAutorForCode(coleccion_pasada));
+        } else {
+            autorTextView.setText("");
         }
         AppBarLayout appBarLayout = (AppBarLayout) findViewById(R.id.appbar);
         appBarLayout.setExpanded(true);
@@ -171,7 +189,7 @@ public class EditCollectionActivity extends AppCompatActivity {
                     collapsingToolbar.setTitle("");
                     titleTextView.setText(getTitleForCode(coleccion_pasada));
                     if (fromMarket) {
-                        autorTextView.setText("Autor: DYarza");
+                        autorTextView.setText(getAutorForCode(coleccion_pasada));
                     }
                     isShow = false;
                 }

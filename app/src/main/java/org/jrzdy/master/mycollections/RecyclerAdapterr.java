@@ -15,16 +15,16 @@ import java.util.ArrayList;
  * Created by Javier on 26/11/2017.
  */
 
-public class RecyclerAdapterr extends RecyclerView.Adapter<RecyclerAdapterr.ViewHolder>{
+public class RecyclerAdapterr extends RecyclerView.Adapter<RecyclerAdapterr.ViewHolder> {
 
     private ArrayList<Colecciones> listaColecciones;
-    private  OnItemClickListener listener;
+    private OnItemClickListener listener;
 
     public interface OnItemClickListener {
         void onItemClick(int posicion);
     }
 
-    public RecyclerAdapterr(ArrayList<Colecciones> listaColecciones, OnItemClickListener listener){
+    public RecyclerAdapterr(ArrayList<Colecciones> listaColecciones, OnItemClickListener listener) {
         this.listaColecciones = listaColecciones;
         this.listener = listener;
     }
@@ -32,7 +32,7 @@ public class RecyclerAdapterr extends RecyclerView.Adapter<RecyclerAdapterr.View
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.adaptador_colecciones,parent,false);
+                .inflate(R.layout.adaptador_colecciones, parent, false);
 
         ViewHolder viewHolder = new ViewHolder(view);
         return viewHolder;
@@ -41,7 +41,7 @@ public class RecyclerAdapterr extends RecyclerView.Adapter<RecyclerAdapterr.View
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.bind(listaColecciones.get(position),position,listener);
+        holder.bind(listaColecciones.get(position), position, listener);
     }
 
     @Override
@@ -49,7 +49,7 @@ public class RecyclerAdapterr extends RecyclerView.Adapter<RecyclerAdapterr.View
         return listaColecciones.size();
     }
 
-    public static class ViewHolder extends RecyclerView.ViewHolder{
+    public static class ViewHolder extends RecyclerView.ViewHolder {
         TextView txtColeccion;
         TextView txtUsuario;
         TextView txtCantidad;
@@ -59,11 +59,11 @@ public class RecyclerAdapterr extends RecyclerView.Adapter<RecyclerAdapterr.View
         public ViewHolder(View itemView) {
             super(itemView);
 
-            txtColeccion=(TextView)itemView.findViewById(R.id.txtColeccion);
-            txtCantidad=(TextView)itemView.findViewById(R.id.txtNumbers);
-            txtUsuario=(TextView)itemView.findViewById(R.id.txtUser);
-            ivFondo=(ImageView) itemView.findViewById(R.id.ivColeccion);
-            fav=(CheckBox) itemView.findViewById(R.id.checkBox1);
+            txtColeccion = (TextView) itemView.findViewById(R.id.txtColeccion);
+            txtCantidad = (TextView) itemView.findViewById(R.id.txtNumbers);
+            txtUsuario = (TextView) itemView.findViewById(R.id.txtUser);
+            ivFondo = (ImageView) itemView.findViewById(R.id.ivColeccion);
+            fav = (CheckBox) itemView.findViewById(R.id.checkBox1);
 
         }
 
@@ -90,11 +90,10 @@ public class RecyclerAdapterr extends RecyclerView.Adapter<RecyclerAdapterr.View
         }
     }
 
-    public void setFilter(ArrayList<Colecciones> listaColecciones){
+    public void setFilter(ArrayList<Colecciones> listaColecciones) {
         this.listaColecciones = new ArrayList<>();
         this.listaColecciones.addAll(listaColecciones);
         notifyDataSetChanged();
 
     }
-
 }

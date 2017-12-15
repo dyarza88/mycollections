@@ -16,12 +16,12 @@ import android.widget.Toast;
 
 import java.util.Vector;
 
-import static org.jrzdy.master.mycollections.AlmacenArticulos.getV_articulo;
-import static org.jrzdy.master.mycollections.AlmacenArticulos.getV_imagart;
-import static org.jrzdy.master.mycollections.AlmacenArticulos.getV_precio;
-import static org.jrzdy.master.mycollections.AlmacenArticulos.setV_articulo;
-import static org.jrzdy.master.mycollections.AlmacenArticulos.setV_imagart;
-import static org.jrzdy.master.mycollections.AlmacenArticulos.setV_precio;
+import static org.jrzdy.master.mycollections.AlmacenArticulos.getvArticulo;
+import static org.jrzdy.master.mycollections.AlmacenArticulos.getvImagart;
+import static org.jrzdy.master.mycollections.AlmacenArticulos.getvPrecio;
+import static org.jrzdy.master.mycollections.AlmacenArticulos.setvArticulo;
+import static org.jrzdy.master.mycollections.AlmacenArticulos.setvImagart;
+import static org.jrzdy.master.mycollections.AlmacenArticulos.setvPrecio;
 import static org.jrzdy.master.mycollections.ImageSelectActivity.pantalla_foto;
 
 /**
@@ -116,21 +116,21 @@ public class EditArticleActivity extends AppCompatActivity {
     private void recogerDatos() {
         nombreArticulo = nombreTV.getText().toString();
         precioArticulo = precioTV.getText().toString();
-        fotoArticulo = getV_imagart().get(posicionColeccion).get(posicionArticulo);
+        fotoArticulo = getvImagart().get(posicionColeccion).get(posicionArticulo);
     }
 
     private void mostrarDatosIniciales() {
         Bundle extras = getIntent().getExtras();
         posicionArticulo = extras.getInt(KEY_ARTICLE);
         posicionColeccion = extras.getInt(KEY_POSITION);
-        fotoIV.setImageResource(getV_imagart().get(posicionColeccion).get(posicionArticulo));
+        fotoIV.setImageResource(getvImagart().get(posicionColeccion).get(posicionArticulo));
 
         Vector<String> articulos = new Vector<String>();
         Vector<String> precio = new Vector<String>();
         Vector<Integer> imagart = new Vector<Integer>();
-        Vector<Vector<String>> miv_articulo = getV_articulo();
-        Vector<Vector<String>> miv_precio = getV_precio();
-        Vector<Vector<Integer>> miv_imagart = getV_imagart();
+        Vector<Vector<String>> miv_articulo = getvArticulo();
+        Vector<Vector<String>> miv_precio = getvPrecio();
+        Vector<Vector<Integer>> miv_imagart = getvImagart();
 
         for (int j = 0; j < miv_articulo.get(posicionColeccion).size(); j++) {
             articulos.add(j, miv_articulo.get(posicionColeccion).get(j));
@@ -160,9 +160,9 @@ public class EditArticleActivity extends AppCompatActivity {
         Vector<String> articulos = new Vector<String>();
         Vector<String> precio = new Vector<String>();
         Vector<Integer> imagart = new Vector<Integer>();
-        Vector<Vector<String>> miv_articulo = getV_articulo();
-        Vector<Vector<String>> miv_precio = getV_precio();
-        Vector<Vector<Integer>> miv_imagart = getV_imagart();
+        Vector<Vector<String>> miv_articulo = getvArticulo();
+        Vector<Vector<String>> miv_precio = getvPrecio();
+        Vector<Vector<Integer>> miv_imagart = getvImagart();
 
         int j = 0;
         for (j = 0; j < miv_articulo.get(posicionColeccion).size(); j++) {
@@ -180,9 +180,9 @@ public class EditArticleActivity extends AppCompatActivity {
         miv_precio.set(posicionColeccion, precio);
         miv_imagart.set(posicionColeccion, imagart);
 
-        setV_articulo(miv_articulo);
-        setV_precio(miv_precio);
-        setV_imagart(miv_imagart);
+        setvArticulo(miv_articulo);
+        setvPrecio(miv_precio);
+        setvImagart(miv_imagart);
     }
 
     private void borrarArticulo() {
@@ -190,9 +190,9 @@ public class EditArticleActivity extends AppCompatActivity {
         Vector<String> articulos = new Vector<String>();
         Vector<String> precio = new Vector<String>();
         Vector<Integer> imagart = new Vector<Integer>();
-        Vector<Vector<String>> miv_articulo = getV_articulo();
-        Vector<Vector<String>> miv_precio = getV_precio();
-        Vector<Vector<Integer>> miv_imagart = getV_imagart();
+        Vector<Vector<String>> miv_articulo = getvArticulo();
+        Vector<Vector<String>> miv_precio = getvPrecio();
+        Vector<Vector<Integer>> miv_imagart = getvImagart();
 
         int j = 0;
         for (j = 0; j < miv_articulo.get(posicionColeccion).size(); j++) {
@@ -216,9 +216,9 @@ public class EditArticleActivity extends AppCompatActivity {
         miv_precio.set(posicionColeccion, precio);
         miv_imagart.set(posicionColeccion, imagart);
 
-        setV_articulo(miv_articulo);
-        setV_precio(miv_precio);
-        setV_imagart(miv_imagart);
+        setvArticulo(miv_articulo);
+        setvPrecio(miv_precio);
+        setvImagart(miv_imagart);
 
         nombreTV.setText("");
         precioTV.setText("");

@@ -86,7 +86,6 @@ public class MarketActivity extends AppCompatActivity implements SearchView.OnQu
     }
 
     public void nuevaColeccion(MenuItem item) {
-        //Toast.makeText(getApplicationContext(), "Añadiendo nueva colección...", Toast.LENGTH_LONG).show();
         startActivity(new Intent(this, PublishCollectionActivity.class));
     }
 
@@ -96,7 +95,6 @@ public class MarketActivity extends AppCompatActivity implements SearchView.OnQu
     }
 
     public void cargarColecciones() {
-        //Llamamos el recycler iniciamos y declaramos la orientacion
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false));
         listaColecciones = new Colecciones().getlistaColecciones();
 
@@ -107,8 +105,12 @@ public class MarketActivity extends AppCompatActivity implements SearchView.OnQu
                 public void onItemClick(final int position) {
 
                     Intent i = new Intent(getApplicationContext(), EditCollectionActivity.class);
+                    if (position == 3) {
+                        i.putExtra(KEY_COLLECTION, 5);
+                    } else {
+                        i.putExtra(KEY_COLLECTION, position);
+                    }
                     //TODO take care into sharing the position parameter as if we use search mode it would not be the same
-                    i.putExtra(KEY_COLLECTION, position);
                     i.putExtra(KEY_MARKET, true);
                     startActivity(i);
                 }

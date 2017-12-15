@@ -14,12 +14,12 @@ import android.widget.TextView;
 
 import java.util.Vector;
 
-import static org.jrzdy.master.mycollections.AlmacenArticulos.getV_articulo;
-import static org.jrzdy.master.mycollections.AlmacenArticulos.getV_imagart;
-import static org.jrzdy.master.mycollections.AlmacenArticulos.getV_precio;
-import static org.jrzdy.master.mycollections.AlmacenArticulos.setV_articulo;
-import static org.jrzdy.master.mycollections.AlmacenArticulos.setV_imagart;
-import static org.jrzdy.master.mycollections.AlmacenArticulos.setV_precio;
+import static org.jrzdy.master.mycollections.AlmacenArticulos.getvArticulo;
+import static org.jrzdy.master.mycollections.AlmacenArticulos.getvImagart;
+import static org.jrzdy.master.mycollections.AlmacenArticulos.getvPrecio;
+import static org.jrzdy.master.mycollections.AlmacenArticulos.setvArticulo;
+import static org.jrzdy.master.mycollections.AlmacenArticulos.setvImagart;
+import static org.jrzdy.master.mycollections.AlmacenArticulos.setvPrecio;
 import static org.jrzdy.master.mycollections.ImageSelectActivity.pantalla_foto;
 
 /**
@@ -108,9 +108,9 @@ public class NuevoArticuloActivity extends AppCompatActivity {
         Vector<String> articulos = new Vector<>();
         Vector<String> precios = new Vector<>();
         Vector<Integer> imagart = new Vector<>();
-        Vector<Vector<String>> miv_articulo = getV_articulo();
-        Vector<Vector<String>> miv_precio = getV_precio();
-        Vector<Vector<Integer>> miv_imagart = getV_imagart();
+        Vector<Vector<String>> miv_articulo = getvArticulo();
+        Vector<Vector<String>> miv_precio = getvPrecio();
+        Vector<Vector<Integer>> miv_imagart = getvImagart();
 
         for (int j = 0; j < miv_articulo.get(indice_colecc).size(); j++) {
 
@@ -127,9 +127,9 @@ public class NuevoArticuloActivity extends AppCompatActivity {
         miv_precio.set(indice_colecc, precios);
         miv_imagart.set(indice_colecc, imagart);
 
-        setV_articulo(miv_articulo);
-        setV_precio(miv_precio);
-        setV_imagart(miv_imagart);
+        setvArticulo(miv_articulo);
+        setvPrecio(miv_precio);
+        setvImagart(miv_imagart);
     }
 }
 

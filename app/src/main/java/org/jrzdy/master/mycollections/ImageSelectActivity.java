@@ -9,8 +9,8 @@ import android.widget.ImageView;
 
 import java.util.Vector;
 
-import static org.jrzdy.master.mycollections.AlmacenArticulos.getV_imagart;
-import static org.jrzdy.master.mycollections.AlmacenArticulos.setV_imagart;
+import static org.jrzdy.master.mycollections.AlmacenArticulos.getvImagart;
+import static org.jrzdy.master.mycollections.AlmacenArticulos.setvImagart;
 import static org.jrzdy.master.mycollections.NuevoArticuloActivity.fotonuevoarticulo;
 
 public class ImageSelectActivity extends AppCompatActivity {
@@ -68,7 +68,7 @@ public class ImageSelectActivity extends AppCompatActivity {
             case 2:
                 mi_colec = extras.getInt(KEY_MY_COL);
                 mi_artic = extras.getInt(KEY_MY_ART);
-                foto_R_drawable_x = getV_imagart().get(mi_colec).get(mi_artic);
+                foto_R_drawable_x = getvImagart().get(mi_colec).get(mi_artic);
                 mi_drawable = getResources().getDrawable(foto_R_drawable_x);
                 imagen.setImageDrawable(mi_drawable);
                 break;
@@ -203,7 +203,7 @@ public class ImageSelectActivity extends AppCompatActivity {
         imagart = new Vector<Integer>();
 
         Vector<Vector<Integer>> miv_imagart;
-        miv_imagart = getV_imagart();
+        miv_imagart = getvImagart();
 
         int j = 0;
         for (j = 0; j < miv_imagart.get(mi_colec).size(); j++) {
@@ -212,7 +212,7 @@ public class ImageSelectActivity extends AppCompatActivity {
 
         imagart.set(mi_artic, foto_R_drawable_x);
         miv_imagart.set(mi_colec, imagart);
-        setV_imagart(miv_imagart);
+        setvImagart(miv_imagart);
     }
 
     public void editar_coleccion() {

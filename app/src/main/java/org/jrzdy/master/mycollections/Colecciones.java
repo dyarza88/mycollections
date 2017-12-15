@@ -40,7 +40,7 @@ public class Colecciones {
         String[] arrayColecciones = new String[]{"Cromos 2017", "Muñecos heman", "sellos", "Cómics DC"};
         String[] arrayUsuarios = new String[]{"Nuria", "Dyarza", "Esther", "Jarucas92"};
         String[] arrayCantidad = new String[]{"100/50", "7/12", "220/1080", "67/90"};
-        String[] arrayFondo = new String[]{"coleccion_cromos", "coleccion_heman", "coleccion_sellos", "coleccion_cromos"};
+        String[] arrayFondo = new String[]{"coleccion_cromos", "coleccion_heman", "coleccion_sellos", "coleccion_comics"};
 
         boolean[] arrayFav = new boolean[]{false, false, false, true};
         try {

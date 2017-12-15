@@ -24,8 +24,6 @@ public class AdaptadormA extends RecyclerView.Adapter<AdaptadormA.ViewHolder> {
     private Vector<String> lista;
     private Vector<String> porcentaje_completo;
     private Vector<Integer> fotos;
-    int coloOart;
-
 
     protected View.OnClickListener onClickListener;
 
