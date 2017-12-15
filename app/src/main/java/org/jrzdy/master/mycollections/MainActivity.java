@@ -21,7 +21,9 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
+import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.gms.ads.MobileAds;
@@ -51,8 +53,35 @@ public class MainActivity extends AppCompatActivity {
         MobileAds.initialize(this, "ca-app-pub-2551868595254778~9143474070");
 
         mInterstitialAd = new InterstitialAd(this);
-        mInterstitialAd.setAdUnitId("ca-app-pub-2551868595254778/9307125608");
-        mInterstitialAd.loadAd(new AdRequest.Builder().build());
+        mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
+        mInterstitialAd.setAdListener(new AdListener() {
+            @Override
+            public void onAdLoaded() {
+                // Code to be executed when an ad finishes loading.
+                Toast.makeText(MainActivity.this, "Anuncio cargado", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onAdFailedToLoad(int errorCode) {
+                // Code to be executed when an ad request fails.
+                Toast.makeText(MainActivity.this, "Error cargando el anuncio", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onAdOpened() {
+                // Code to be executed when the ad is displayed.
+            }
+
+            @Override
+            public void onAdLeftApplication() {
+                // Code to be executed when the user has left the app.
+            }
+
+            @Override
+            public void onAdClosed() {
+                // Code to be executed when when the interstitial ad is closed.
+            }
+        });
 
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
@@ -124,6 +153,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
+    protected void onResume() {
+        mInterstitialAd.loadAd(new AdRequest.Builder().build());
+        super.onResume();
+    }
+
+    @Override
     protected void onPostCreate(Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
         // Sync the toggle state after onRestoreInstanceState has occurred.
@@ -147,15 +182,14 @@ public class MainActivity extends AppCompatActivity {
 
         switch (item.getItemId()) {
             case R.id.menu_new:
+                Intent i = new Intent(this, NewCollectionActivity.class);
+                startActivity(i, ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
                 // Abre el anuncio
                 if (mInterstitialAd.isLoaded()) {
                     mInterstitialAd.show();
                 } else {
-                    Log.d("TAG", "El anuncio no está cargado aún");
+                    Toast.makeText(this, "El anuncio no está cargado aún", Toast.LENGTH_SHORT).show();
                 }
-
-                Intent i = new Intent(this, NewCollectionActivity.class);
-                startActivity(i, ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
                 return true;
             default:
                 // Handle left menu actions
