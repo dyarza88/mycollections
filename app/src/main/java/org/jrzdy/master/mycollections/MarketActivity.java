@@ -15,6 +15,7 @@ import java.util.ArrayList;
 public class MarketActivity extends AppCompatActivity implements SearchView.OnQueryTextListener {
 
     private static String KEY_COLLECTION = "num_colecc";
+    private static String KEY_MARKET = "market";
     ArrayList<Colecciones> listaColecciones;
     RecyclerAdapterr recyclerAdapterr;
     RecyclerView recyclerView;
@@ -108,6 +109,7 @@ public class MarketActivity extends AppCompatActivity implements SearchView.OnQu
                     Intent i = new Intent(getApplicationContext(), EditCollectionActivity.class);
                     //TODO take care into sharing the position parameter as if we use search mode it would not be the same
                     i.putExtra(KEY_COLLECTION, position);
+                    i.putExtra(KEY_MARKET, true);
                     startActivity(i);
                 }
             });

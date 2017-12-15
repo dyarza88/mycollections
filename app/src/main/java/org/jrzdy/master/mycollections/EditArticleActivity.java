@@ -79,6 +79,8 @@ public class EditArticleActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 editarArticulo();
+                finish();
+                return;
             }
         });
 
@@ -89,8 +91,6 @@ public class EditArticleActivity extends AppCompatActivity {
                 finish();
             }
         });
-
-        EditCollectionActivity.reinicio = 1;
     }
 
     @Override

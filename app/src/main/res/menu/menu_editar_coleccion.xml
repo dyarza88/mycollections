@@ -4,6 +4,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".EditCollectionActivity">
+
+    <item
+        android:id="@+id/añadirfavoritos"
+        android:icon="@android:drawable/star_big_off"
+        android:title="@string/favs"
+        android:visible="false"
+        app:showAsAction="always|collapseActionView"/>
+
     <item
         android:id="@+id/editarcoleccion"
         android:icon="@android:drawable/ic_menu_edit"
@@ -14,5 +22,7 @@
         android:id="@+id/borrarcoleccion"
         android:icon="@android:drawable/ic_menu_delete"
         android:title="Borrar Colección" />
+
+
 
 </menu>

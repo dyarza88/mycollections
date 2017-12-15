@@ -32,10 +32,10 @@ public class AlmacenArticulos {
         precio_0 = "";
         imagart_0 = R.drawable.web_cab_circulo;
 
-        articulos = new Vector<String>();
-        precio = new Vector<String>();
-        imagart = new Vector<Integer>();
-        coche = new Vector<Integer>();
+        articulos = new Vector<>();
+        precio = new Vector<>();
+        imagart = new Vector<>();
+        coche = new Vector<>();
 
         articulos.add(articulo_0);
         imagart.add(imagart_0);
@@ -45,12 +45,12 @@ public class AlmacenArticulos {
         imagart.add(imagart_0);
         precio.add(precio_0);
 
-        v_articulo = new Vector<Vector<String>>();
-        v_precio = new Vector<Vector<String>>();
-        v_imagart = new Vector<Vector<Integer>>();
-        v_articulo_apoyo = new ArrayList<Vector<String>>();
-        v_precio_apoyo = new ArrayList<Vector<String>>();
-        v_imagart_apoyo = new ArrayList<Vector<Integer>>();
+        v_articulo = new Vector<>();
+        v_precio = new Vector<>();
+        v_imagart = new Vector<>();
+        v_articulo_apoyo = new ArrayList<>();
+        v_precio_apoyo = new ArrayList<>();
+        v_imagart_apoyo = new ArrayList<>();
 
         for (int i = 0; i <= 4; i++) {
             v_articulo.add(i, articulos);

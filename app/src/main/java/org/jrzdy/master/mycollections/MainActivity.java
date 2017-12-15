@@ -26,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
     //TODO implement dummy user session
 
     private static String KEY_COLLECTION = "num_colecc";
+    private static String KEY_LOGGED = "logged";
+    private boolean isLoged = false;
     private String[] mTitles;
     private DrawerLayout mDrawerLayout;
     private ListView mDrawerList;
@@ -41,6 +43,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            if (extras.containsKey(KEY_LOGGED)) {
+                isLoged = extras.getBoolean(KEY_LOGGED);
+            }
+        }
 
         recyclerView = (RecyclerView) findViewById(R.id.contenedor_rv_miscoleccsB);
         adaptadormC = new AdaptadormC(this, almacenColecciones.getColecciones(), almacenColecciones.getImagcol(), almacenColecciones.getPorcentajeCompleto());

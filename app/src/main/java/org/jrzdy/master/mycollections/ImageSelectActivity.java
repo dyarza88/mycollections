@@ -11,7 +11,7 @@ import java.util.Vector;
 
 import static org.jrzdy.master.mycollections.AlmacenArticulos.getV_imagart;
 import static org.jrzdy.master.mycollections.AlmacenArticulos.setV_imagart;
-import static org.jrzdy.master.mycollections.NuevoArticulo.fotonuevoarticulo;
+import static org.jrzdy.master.mycollections.NuevoArticuloActivity.fotonuevoarticulo;
 
 public class ImageSelectActivity extends AppCompatActivity {
 
@@ -219,4 +219,8 @@ public class ImageSelectActivity extends AppCompatActivity {
         // do nothing bc its not implemented yet
     }
 
+    public void closeActivity(View view) {
+        finish();
+        return;
+    }
 }

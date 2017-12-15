@@ -1,15 +1,24 @@
 package org.jrzdy.master.mycollections;
 
 import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Bundle;
+import android.support.design.widget.AppBarLayout;
+import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.util.TypedValue;
 import android.view.View;
-import android.widget.Toast;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
 
 import static org.jrzdy.master.mycollections.MainActivity.almacenArticulos;
 
@@ -24,11 +33,12 @@ public class EditCollectionActivity extends AppCompatActivity {
     private static String KEY_COLLECTION = "num_colecc";
     private static String KEY_POSITION = "num_col";
     private static String KEY_ARTICLE = "num_art";
+    private static String KEY_MARKET = "market";
+    private boolean fromMarket = false;
     private RecyclerView recyclerView;
     private RecyclerView.LayoutManager layoutManager;
     private AdaptadormA adaptadormA;
-    private int coleccion_pasada;
-    public static int reinicio;
+    private int coleccion_pasada = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,15 +46,31 @@ public class EditCollectionActivity extends AppCompatActivity {
         setContentView(R.layout.editcolectionnuevo);
 
         Bundle extras = getIntent().getExtras();
-        coleccion_pasada = extras.getInt(KEY_COLLECTION);
-        getSupportActionBar().setTitle(getTitleForCode(coleccion_pasada));
+        if (extras != null) {
+            if (extras.containsKey(KEY_MARKET)) {
+                fromMarket = extras.getBoolean(KEY_MARKET);
+            }
+            if (extras.containsKey(KEY_COLLECTION)) {
+                coleccion_pasada = extras.getInt(KEY_COLLECTION);
+            }
+        }
+
+        initCollapsingToolbar();
         recyclerView = (RecyclerView) findViewById(R.id.recicladorarticulos);
+        recyclerView.addItemDecoration(new GridSpacingItemDecoration(2, dpToPx(10), true));
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
         adaptadormA = new AdaptadormA(this, almacenArticulos.getCollecciones(coleccion_pasada),
                 almacenArticulos.getImagcol(coleccion_pasada),
                 almacenArticulos.getCantidades(coleccion_pasada));
 
         recyclerView.setAdapter(adaptadormA);
-        layoutManager = new GridLayoutManager(this, 2);
+        if (fromMarket) {
+            layoutManager = new LinearLayoutManager(this,
+                    LinearLayoutManager.HORIZONTAL, false);
+        } else {
+            layoutManager = new GridLayoutManager(this, 2);
+        }
+
         recyclerView.setLayoutManager(layoutManager);
         adaptadormA.setOnItemClickListener(new View.OnClickListener() {
             @Override
@@ -53,7 +79,7 @@ public class EditCollectionActivity extends AppCompatActivity {
                 Intent i = new Intent(getApplicationContext(), EditArticleActivity.class);
                 i.putExtra(KEY_ARTICLE, pos);
                 i.putExtra(KEY_POSITION, coleccion_pasada);
-                startActivityForResult(i, REQUEST_CODE_1);
+                startActivity(i);
             }
         });
 
@@ -61,12 +87,37 @@ public class EditCollectionActivity extends AppCompatActivity {
         mas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(v.getContext(), NuevoArticulo.class);
+                Intent i = new Intent(v.getContext(), NuevoArticuloActivity.class);
                 i.putExtra(KEY_POSITION, coleccion_pasada);
                 startActivity(i);
             }
         });
 
+        try {
+            Glide.with(this).load(getDrawableForCode(coleccion_pasada)).into((ImageView) findViewById(R.id.backdrop));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    private int getDrawableForCode(int code) {
+        switch (code) {
+            case 0:
+                return R.drawable.coleccion_cromos;
+            case 1:
+                return R.drawable.coleccion_heman;
+            case 2:
+                return R.drawable.coleccion_sellos;
+            case 3:
+                return R.drawable.ic_shoes_collection;
+            case 4:
+                return R.drawable.ic_coins_collection;
+            case 5:
+                return R.drawable.coleccion_cromos;
+            default:
+                return R.drawable.coleccion_cromos;
+        }
     }
 
     private String getTitleForCode(int code) {
@@ -88,6 +139,51 @@ public class EditCollectionActivity extends AppCompatActivity {
         }
     }
 
+    private void initCollapsingToolbar() {
+        final CollapsingToolbarLayout collapsingToolbar =
+                (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
+        final TextView titleTextView = (TextView) findViewById(R.id.header_title);
+        final TextView autorTextView = (TextView) findViewById(R.id.header_author);
+        collapsingToolbar.setTitle("");
+        titleTextView.setText(getTitleForCode(coleccion_pasada));
+        if (fromMarket) {
+            autorTextView.setText("Autor: DYarza");
+        }
+        AppBarLayout appBarLayout = (AppBarLayout) findViewById(R.id.appbar);
+        appBarLayout.setExpanded(true);
+
+        // hiding & showing the title when toolbar expanded & collapsed
+        appBarLayout.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
+            boolean isShow = false;
+            int scrollRange = -1;
+
+            @Override
+            public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
+                if (scrollRange == -1) {
+                    scrollRange = appBarLayout.getTotalScrollRange();
+                }
+                if (scrollRange + verticalOffset == 0) {
+                    collapsingToolbar.setTitle(getTitleForCode(coleccion_pasada));
+                    titleTextView.setText("");
+                    autorTextView.setText("");
+                    isShow = true;
+                } else if (isShow) {
+                    collapsingToolbar.setTitle("");
+                    titleTextView.setText(getTitleForCode(coleccion_pasada));
+                    if (fromMarket) {
+                        autorTextView.setText("Autor: DYarza");
+                    }
+                    isShow = false;
+                }
+            }
+        });
+    }
+
+    private int dpToPx(int dp) {
+        Resources r = getResources();
+        return Math.round(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, r.getDisplayMetrics()));
+    }
+
     @Override
     protected void onResume() {
         super.onResume();
@@ -99,32 +195,16 @@ public class EditCollectionActivity extends AppCompatActivity {
         adaptadormA.notifyDataSetChanged();
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_editar_coleccion, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-        if (id == R.id.editarcoleccion) {
-            Intent i = new Intent(getApplicationContext(), NewCollectionActivity.class);
-            startActivity(i);
-            return true;
-        }
-        if (id == R.id.borrarcoleccion) {
-            Toast.makeText(EditCollectionActivity.this, "Colección borrada", Toast.LENGTH_SHORT).show();
-            finish();
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == REQUEST_CODE_1 && requestCode == RESULT_OK) {
             //Do nothing since the logic is not implemented yet
         }
+    }
+
+    public void editCollection(View view) {
+        Intent i = new Intent(EditCollectionActivity.this, NewCollectionActivity.class);
+        startActivity(i);
     }
 }

@@ -89,5 +89,6 @@
     <string name="dummy_content">DUMMY\nCONTENT</string>
   
     <string name="transition_name_camara">transition:IMG</string>
+    <string name="favs">Añadir a favoritos</string>
 
 </resources>
