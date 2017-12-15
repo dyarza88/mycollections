@@ -4,7 +4,7 @@ android {
     compileSdkVersion 25
     buildToolsVersion '26.0.2'
     defaultConfig {
-        applicationId "org.android.master.mycollections"
+        applicationId "org.jrzdy.master.mycollections"
         minSdkVersion 21
         targetSdkVersion 25
         versionCode 1

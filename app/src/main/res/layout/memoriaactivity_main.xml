@@ -8,7 +8,7 @@
     <!-- The main content view -->
     <FrameLayout
         android:id="@+id/content_frame"
-        android:name="org.android.master.mycollections.SelectorFragment"
+        android:name="org.jrzdy.master.mycollections.SelectorFragment"
         android:layout="@layout/contenedor_recyclerview_miscoleccs"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
